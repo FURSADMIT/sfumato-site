@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
+import MenuProvider from "@/components/Menu";
 
 const ntSomic = localFont({
   src: "../../public/fonts/NT_Somic-VF.ttf",
@@ -18,7 +19,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ru" className={`${ntSomic.variable} h-full antialiased`}>
       <body className="min-h-full">
-        <SmoothScroll>{children}</SmoothScroll>
+        <SmoothScroll>
+          <MenuProvider>{children}</MenuProvider>
+        </SmoothScroll>
       </body>
     </html>
   );

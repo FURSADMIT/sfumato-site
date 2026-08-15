@@ -4,11 +4,13 @@ import { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { useMenu } from "@/components/Menu";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 export default function Hero() {
   const root = useRef(null);
+  const { open } = useMenu();
 
   useGSAP(
     () => {
@@ -65,11 +67,11 @@ export default function Hero() {
             <a href="#contact" className="transition-opacity hover:opacity-70">[ ОБСУДИТЬ ПРОЕКТ ]</a>
           </nav>
         </div>
-        <div className="flex flex-col gap-[6px]">
+        <button aria-label="Открыть меню" onClick={open} className="flex cursor-pointer flex-col gap-[6px] transition-opacity hover:opacity-60">
           <span className="h-[2.4px] w-[30px] rounded-[2px] bg-white" />
           <span className="h-[2.4px] w-[30px] rounded-[2px] bg-white" />
           <span className="h-[2.4px] w-[30px] rounded-[2px] bg-white" />
-        </div>
+        </button>
       </div>
 
       {/* Вордмарк */}
