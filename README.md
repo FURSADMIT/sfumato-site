@@ -35,6 +35,11 @@ public/
   fonts/             — NT Somic VF + Bold
   images/            — фото и логотипы, выгруженные из Figma-макета
   logo/              — (резерв под SVG-версии логотипа)
+brand/
+  brandbook.pdf      — брендбук sfumàto (27 стр.)
+  logo-mark.zip      — знак «S» (SVG/PNG, цветовые версии)
+  logo-wordmark.zip  — вордмарк sfumàto (SVG/PNG, цветовые версии)
+  sources.zip        — исходники (постер + шрифты)
 ```
 
 ## Секции главной (порядок как в макете V1)
