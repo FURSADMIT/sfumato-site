@@ -4,21 +4,18 @@ import { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { useMenu } from "@/components/Menu";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 export default function Hero() {
   const root = useRef(null);
-  const { open } = useMenu();
 
   useGSAP(
     () => {
       // Появление hero при загрузке
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
       tl.from(".hero-img", { scale: 1.06, duration: 1.6, ease: "power2.out" })
-        .from(".hero-top", { y: -16, opacity: 0, duration: 0.8 }, "-=1.2")
-        .from(".hero-wordmark", { y: 40, opacity: 0, duration: 1 }, "-=0.8")
+        .from(".hero-wordmark", { y: 40, opacity: 0, duration: 1 }, "-=1.1")
         .from(".hero-meta", { y: 16, opacity: 0, duration: 0.8, stagger: 0.1 }, "-=0.6");
 
       // Параллакс: фото медленнее скролла, вордмарк уплывает
@@ -56,23 +53,6 @@ export default function Hero() {
       />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[170px] bg-gradient-to-b from-black/35 to-transparent" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[420px] bg-gradient-to-b from-transparent to-black/50" />
-
-      {/* Верхняя навигация */}
-      <div className="hero-top absolute inset-x-0 top-0 flex items-center justify-between px-6 pt-10 text-white md:px-12">
-        <div className="flex items-center gap-6">
-          <img src="/images/mark-white.png" alt="sfumàto" className="size-[42px] drop-shadow-[0_1px_14px_rgba(0,0,0,0.4)]" />
-          <nav className="hidden items-center gap-[26px] text-[14px] font-medium tracking-[0.01em] [text-shadow:0_1px_12px_rgba(0,0,0,0.35)] md:flex">
-            <a href="#about" className="transition-opacity hover:opacity-70">[ О ПРОЕКТЕ ]</a>
-            <a href="#services" className="transition-opacity hover:opacity-70">[ УСЛУГИ ]</a>
-            <a href="#contact" className="transition-opacity hover:opacity-70">[ ОБСУДИТЬ ПРОЕКТ ]</a>
-          </nav>
-        </div>
-        <button aria-label="Открыть меню" onClick={open} className="flex cursor-pointer flex-col gap-[6px] transition-opacity hover:opacity-60">
-          <span className="h-[2.4px] w-[30px] rounded-[2px] bg-white" />
-          <span className="h-[2.4px] w-[30px] rounded-[2px] bg-white" />
-          <span className="h-[2.4px] w-[30px] rounded-[2px] bg-white" />
-        </button>
-      </div>
 
       {/* Вордмарк */}
       <img
