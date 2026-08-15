@@ -1,5 +1,7 @@
 import Hero from "@/components/Hero";
 import Reveal from "@/components/Reveal";
+import SplitHeading from "@/components/SplitHeading";
+import ShaderImage from "@/components/ShaderImage";
 
 const SERVICES = [
   {
@@ -82,26 +84,22 @@ export default function Home() {
         <Container>
           <Reveal>
             <SectionLabel>[ О ПРОЕКТЕ ]</SectionLabel>
-            <h2 className="mt-[56px] text-[clamp(2rem,3.3vw,2.94rem)] font-bold uppercase leading-[1.1] tracking-[-0.01em]">
-              <span className="lowercase text-[1.32em] font-semibold">sfumàto</span> — АГЕНТСТВО
-              <br />
-              ЭСТЕТИЧНОГО МАРКЕТИНГА
-            </h2>
           </Reveal>
+          <SplitHeading className="mt-[56px] text-[clamp(2rem,3.3vw,2.94rem)] font-bold uppercase leading-[1.1] tracking-[-0.01em]">
+            <span className="lowercase text-[1.32em] font-semibold">sfumàto</span> — АГЕНТСТВО
+            <br />
+            ЭСТЕТИЧНОГО МАРКЕТИНГА
+          </SplitHeading>
           <div className="mt-[64px] grid gap-12 md:grid-cols-2 md:gap-8">
             <Reveal>
-              <div className="aspect-square w-full overflow-hidden">
-                <img src="/images/about-art.png" alt="Минималистичные скульптурные формы" className="size-full object-cover" />
-              </div>
+              <ShaderImage src="/images/about-art.png" alt="Минималистичные скульптурные формы" className="aspect-square w-full" />
               <h3 className="mt-5 text-[20px] font-bold uppercase leading-[1.2]">МАРКЕТИНГ НА ЯЗЫКЕ ИСКУССТВА</h3>
               <p className="mt-5 text-[16px] leading-[1.54] text-gray">
                 Каждая кампания — это поиск глубинной истины вашего бренда через эстетику. В нашем ДНК возвышенная символика, драматическое напряжение духа и выразительность.
               </p>
             </Reveal>
             <Reveal delay={0.12}>
-              <div className="aspect-square w-full overflow-hidden">
-                <img src="/images/about-elegance.png" alt="Портрет с драпировками" className="size-full object-cover" />
-              </div>
+              <ShaderImage src="/images/about-elegance.png" alt="Портрет с драпировками" className="aspect-square w-full" />
               <h3 className="mt-5 text-[20px] font-bold uppercase leading-[1.2]">ГЛУБИНА, СМЫСЛ И ИЗЯЩЕСТВО</h3>
               <p className="mt-5 text-[16px] leading-[1.54] text-gray">
                 Всё это существует параллельно с текущими современными кодами и символами. Мы вдохновлены проектами с особой глубиной и стремлением к бесконечно простому (или не очень) изяществу.
@@ -119,10 +117,10 @@ export default function Home() {
             <div className="mt-10">
               <SectionLabel>[ УСЛУГИ ]</SectionLabel>
             </div>
-            <p className="mt-10 max-w-[1000px] text-[clamp(1.25rem,1.8vw,1.63rem)] font-medium leading-[1.32]">
-              системное развитие бренда в социальных сетях и digital через контент, визуальную среду и эмоциональную связь с аудиторией.
-            </p>
           </Reveal>
+          <SplitHeading as="p" className="mt-10 max-w-[1000px] text-[clamp(1.25rem,1.8vw,1.63rem)] font-medium leading-[1.32]">
+            системное развитие бренда в социальных сетях и digital через контент, визуальную среду и эмоциональную связь с аудиторией.
+          </SplitHeading>
           <div className="mt-14">
             {SERVICES.map((s, i) => (
               <Reveal key={s.name}>
@@ -150,17 +148,13 @@ export default function Home() {
             {MISSION.map((m, i) => (
               <Reveal key={m.img} delay={i * 0.12}>
                 <p className="text-[15px] leading-[1.52] text-gray md:min-h-[69px]">{m.text}</p>
-                <div className="mt-[22px] aspect-[5/6] w-full overflow-hidden">
-                  <img src={m.img} alt="" className="size-full object-cover" />
-                </div>
+                <ShaderImage src={m.img} alt="" className="mt-[22px] aspect-[5/6] w-full" />
               </Reveal>
             ))}
           </div>
-          <Reveal>
-            <p className="mt-14 text-[clamp(1.7rem,3vw,2.75rem)] font-semibold uppercase leading-[1.12] tracking-[-0.01em]">
-              ПРЕВРАЩАТЬ ЭСТЕТИКУ В ОТКЛИК, А ЦЕННОСТИ БРЕНДА — В ЗНАЧИМЫЙ ОПЫТ ДЛЯ ЛЮДЕЙ
-            </p>
-          </Reveal>
+          <SplitHeading as="p" className="mt-14 text-[clamp(1.7rem,3vw,2.75rem)] font-semibold uppercase leading-[1.12] tracking-[-0.01em]">
+            ПРЕВРАЩАТЬ ЭСТЕТИКУ В ОТКЛИК, А ЦЕННОСТИ БРЕНДА — В ЗНАЧИМЫЙ ОПЫТ ДЛЯ ЛЮДЕЙ
+          </SplitHeading>
         </Container>
       </section>
 
@@ -234,13 +228,11 @@ export default function Home() {
         <Container>
           <div className="h-px w-full bg-line" />
           <div className="mt-16 justify-between gap-12 md:flex">
-            <Reveal>
-              <h2 className="text-[clamp(3rem,6.4vw,5.75rem)] font-extrabold uppercase leading-[0.96] tracking-[-0.01em]">
-                ОБСУДИТЬ
-                <br />
-                ВАШ ПРОЕКТ
-              </h2>
-            </Reveal>
+            <SplitHeading className="text-[clamp(3rem,6.4vw,5.75rem)] font-extrabold uppercase leading-[0.96] tracking-[-0.01em]">
+              ОБСУДИТЬ
+              <br />
+              ВАШ ПРОЕКТ
+            </SplitHeading>
             <Reveal delay={0.15} className="mt-10 md:mt-0 md:w-[380px] md:shrink-0">
               <p className="pt-[14px] text-[17px] leading-[1.5] text-gray">
                 Работаем с российскими и международными брендами и проектами, для которых важны смысл, форма и результат.
