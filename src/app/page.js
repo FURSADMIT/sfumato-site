@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Hero from "@/components/Hero";
 import Reveal from "@/components/Reveal";
 import SplitHeading from "@/components/SplitHeading";
@@ -259,7 +260,9 @@ export default function Home() {
               БУТИКОВОЕ АГЕНТСТВО ЭСТЕТИЧНЫХ
               <br />
               МАРКЕТИНГОВЫХ КАМПАНИЙ
-              <p className="mt-6 cursor-pointer transition-colors hover:text-muted">ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</p>
+              <p className="mt-6">
+                <Link href="/privacy" className="transition-colors hover:text-muted">ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</Link>
+              </p>
             </div>
             <nav className="flex flex-col gap-3 text-[15px] font-medium tracking-[0.01em]">
               <a href="#about" className="transition-colors hover:text-muted">[ О ПРОЕКТЕ ]</a>
