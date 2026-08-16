@@ -76,7 +76,7 @@ const SECTIONS = [
 export default function PrivacyPage() {
   return (
     <main className="min-h-screen">
-      <div className="mx-auto max-w-[1440px] px-6 md:px-12">
+      <div className="px-6 md:px-12">
         {/* Верхняя панель */}
         <div className="flex items-center justify-between pt-10">
           <Link href="/" className="flex items-center gap-6 transition-opacity hover:opacity-60">

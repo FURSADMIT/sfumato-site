@@ -20,9 +20,9 @@ const fragmentShader = /* glsl */ `
   uniform float uProgress;
   uniform vec2 uPlaneRes;
   uniform vec2 uImageRes;
+  uniform vec2 uMouse; /* в координатах контейнера 0..1 */
   varying vec2 vUv;
 
-  /* uv с поведением object-fit: cover */
   vec2 coverUv(vec2 uv) {
     float rs = uPlaneRes.x / uPlaneRes.y;
     float ri = uImageRes.x / uImageRes.y;
@@ -38,21 +38,21 @@ const fragmentShader = /* glsl */ `
   void main() {
     float p = uProgress;
     vec2 uv = coverUv(vUv);
-    /* лёгкий зум к центру */
-    uv = (uv - 0.5) * (1.0 - 0.06 * p) + 0.5;
-    /* жидкое искажение */
-    uv.x += sin(uv.y * 6.2831 + uTime * 1.4) * 0.012 * p;
-    uv.y += cos(uv.x * 5.0 + uTime * 1.1) * 0.010 * p;
-    /* лёгкий rgb-сдвиг */
-    float shift = 0.006 * p;
-    float r = texture2D(uTexture, uv + vec2(shift, 0.0)).r;
-    float g = texture2D(uTexture, uv).g;
-    float b = texture2D(uTexture, uv - vec2(shift, 0.0)).b;
-    gl_FragColor = vec4(r, g, b, 1.0);
+    /* мягкий зум всего кадра */
+    uv = (uv - 0.5) * (1.0 - 0.05 * p) + 0.5;
+    /* линза у курсора: пиксели плавно стягиваются к точке — эффект увеличения */
+    vec2 m = coverUv(uMouse);
+    vec2 d = uv - m;
+    float dist = length(d * vec2(uPlaneRes.x / uPlaneRes.y, 1.0));
+    uv -= d * exp(-dist * dist * 9.0) * 0.35 * p;
+    /* тонкая волна, расходящаяся от курсора */
+    float wave = sin(dist * 26.0 - uTime * 3.2) * exp(-dist * 4.5);
+    uv += (d / (dist + 1e-3)) * wave * 0.005 * p;
+    gl_FragColor = texture2D(uTexture, uv);
   }
 `;
 
-function Plane({ src, progress }) {
+function Plane({ src, progress, mouse }) {
   const matRef = useRef(null);
   const texture = useTexture(src);
   const size = useThree((s) => s.size);
@@ -63,6 +63,7 @@ function Plane({ src, progress }) {
       uTime: { value: 0 },
       uProgress: { value: 0 },
       uPlaneRes: { value: new THREE.Vector2(1, 1) },
+      uMouse: { value: new THREE.Vector2(0.5, 0.5) },
       uImageRes: {
         value: new THREE.Vector2(texture.image.width, texture.image.height),
       },
@@ -71,7 +72,7 @@ function Plane({ src, progress }) {
   );
 
   useEffect(() => {
-    // мутируем юниформы именно у материала: r3f может скопировать объект из пропса
+    // мутируем юниформы именно у материала: r3f копирует объект из пропса
     matRef.current?.uniforms.uPlaneRes.value.set(size.width, size.height);
   }, [size]);
 
@@ -80,6 +81,8 @@ function Plane({ src, progress }) {
     if (!u) return;
     u.uTime.value += delta;
     u.uProgress.value = progress.current;
+    // плавное следование линзы за курсором
+    u.uMouse.value.lerp(mouse.current, 0.09);
   });
 
   return (
@@ -97,10 +100,10 @@ function Plane({ src, progress }) {
 
 export default function ShaderImageCanvas({ src }) {
   const progress = useRef(0);
+  const mouse = useRef(new THREE.Vector2(0.5, 0.5));
   const stateRef = useRef(null);
   const tickerRef = useRef(null);
 
-  // Пока идёт ховер-анимация — просим кадры; в покое рендера нет (frameloop="demand")
   const startTicker = () => {
     if (tickerRef.current) return;
     tickerRef.current = () => {
@@ -117,20 +120,23 @@ export default function ShaderImageCanvas({ src }) {
 
   useEffect(() => stopTicker, []);
 
+  const setMouse = (e) => {
+    const r = e.currentTarget.getBoundingClientRect();
+    mouse.current.set((e.clientX - r.left) / r.width, 1 - (e.clientY - r.top) / r.height);
+  };
   const animateTo = (value) => {
     startTicker();
-    gsap.to(progress, {
-      current: value,
-      duration: 0.9,
-      ease: "power3.out",
-      overwrite: true,
-    });
+    gsap.to(progress, { current: value, duration: 0.8, ease: "power3.out", overwrite: true });
   };
 
   return (
     <div
       className="absolute inset-0"
-      onPointerEnter={() => animateTo(1)}
+      onPointerEnter={(e) => {
+        setMouse(e);
+        mouse.current && animateTo(1);
+      }}
+      onPointerMove={setMouse}
       onPointerLeave={() => animateTo(0)}
     >
       <Canvas
@@ -143,7 +149,7 @@ export default function ShaderImageCanvas({ src }) {
         }}
       >
         <Suspense fallback={null}>
-          <Plane src={src} progress={progress} />
+          <Plane src={src} progress={progress} mouse={mouse} />
         </Suspense>
       </Canvas>
     </div>

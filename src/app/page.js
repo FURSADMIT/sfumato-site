@@ -39,22 +39,25 @@ const APPROACH = [
   {
     n: "01",
     title: "ЭСТЕТИКА КАК ИНСТРУМЕНТ ЛИДЕРСТВА",
+    img: "/images/mission-1.png",
     text: "Работаем с эстетикой как с полноценным инструментом коммуникации. Визуальная культура для нас — рабочий способ решения бизнес-задач. Каждый образ, деталь и решение становятся частью общей стратегии бренда или проекта, помогая занимать уникальное место в сознании аудитории и усиливать своё влияние на рынке.",
   },
   {
     n: "02",
     title: "СОЗДАЁМ ОТКЛИК ТАМ, ГДЕ НЕ РАБОТАЮТ ШАБЛОНЫ",
+    img: "/images/mission-2.png",
     text: "Работаем с аудиториями, для которых важны контекст, вкус и доверие. В основе нашей работы лежит глубокое понимание ЦА, её мотивов и культурных ориентиров. Формируем коммуникацию, которая привлекает внимание и одновременно генерирует устойчивую эмоциональную связь и подлинный интерес. Находим возможности для развития в нетипичных каналах — там, где традиционные инструменты теряют эффективность.",
   },
   {
     n: "03",
     title: "СОЕДИНЯЕМ КРАСОТУ И РЕЗУЛЬТАТ",
+    img: "/images/mission-3.png",
     text: "Мы не разделяем маркетинг на эффективный и эстетичный. Самые сильные проекты рождаются там, где стратегическое мышление встречается с выразительным визуальным языком. Работаем и с имиджевыми задачами, и с коммерческой нацеленностью на бизнес-KPI. Высокий положительный ROI даже на труднодостижимые сегменты — наш главный ориентир: узнаваемость, продажи и долгосрочная связь с аудиторией.",
   },
 ];
 
 function Container({ children, className = "" }) {
-  return <div className={`mx-auto max-w-[1440px] px-6 md:px-12 ${className}`}>{children}</div>;
+  return <div className={`px-6 md:px-12 ${className}`}>{children}</div>;
 }
 
 function SectionLabel({ children }) {
@@ -83,14 +86,14 @@ export default function Home() {
           </SplitHeading>
           <div className="mt-[64px] grid gap-12 md:grid-cols-2 md:gap-8">
             <Reveal>
-              <ShaderImage src="/images/about-art.png" alt="Минималистичные скульптурные формы" className="aspect-square w-full" />
+              <ShaderImage src="/images/about-art.png" alt="Минималистичные скульптурные формы" className="aspect-square w-full" effect="breathe" />
               <h3 className="mt-5 text-[20px] font-bold uppercase leading-[1.2]">МАРКЕТИНГ НА ЯЗЫКЕ ИСКУССТВА</h3>
               <p className="mt-5 text-[16px] leading-[1.54] text-gray">
                 Каждая кампания — это поиск глубинной истины вашего бренда через эстетику. В нашем ДНК возвышенная символика, драматическое напряжение духа и выразительность.
               </p>
             </Reveal>
             <Reveal delay={0.12}>
-              <ShaderImage src="/images/about-elegance.png" alt="Портрет с драпировками" className="aspect-square w-full" />
+              <ShaderImage src="/images/about-elegance.png" alt="Портрет с драпировками" className="aspect-square w-full" effect="breathe" />
               <h3 className="mt-5 text-[20px] font-bold uppercase leading-[1.2]">ГЛУБИНА, СМЫСЛ И ИЗЯЩЕСТВО</h3>
               <p className="mt-5 text-[16px] leading-[1.54] text-gray">
                 Всё это существует параллельно с текущими современными кодами и символами. Мы вдохновлены проектами с особой глубиной и стремлением к бесконечно простому (или не очень) изяществу.
@@ -188,8 +191,9 @@ export default function Home() {
             {APPROACH.map((a, i) => (
               <Reveal key={a.n} delay={i * 0.12}>
                 <p className="text-[13px] font-medium tracking-[0.02em] text-muted">{a.n}</p>
-                <h3 className="mt-[18px] text-[22px] font-bold uppercase leading-[1.22]">{a.title}</h3>
+                <h3 className="mt-[18px] text-[22px] font-bold uppercase leading-[1.22] md:min-h-[54px]">{a.title}</h3>
                 <div className="mt-[18px] h-px w-full bg-line" />
+                <ShaderImage src={a.img} alt="" className="mt-[18px] aspect-[4/5] w-full" />
                 <p className="mt-[18px] text-[15px] leading-[1.54] text-gray">{a.text}</p>
               </Reveal>
             ))}
