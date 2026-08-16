@@ -77,7 +77,7 @@ export default function Home() {
             <SectionLabel>[ О ПРОЕКТЕ ]</SectionLabel>
           </Reveal>
           <SplitHeading className="mt-[56px] text-[clamp(2rem,3.3vw,2.94rem)] font-bold uppercase leading-[1.1] tracking-[-0.01em]">
-            <span className="lowercase text-[1.32em] font-semibold">sfumàto</span> — АГЕНТСТВО
+            <span className="text-[1.32em] font-semibold">sfumàto</span> — АГЕНТСТВО
             <br />
             ЭСТЕТИЧНОГО МАРКЕТИНГА
           </SplitHeading>
@@ -119,7 +119,7 @@ export default function Home() {
             {SERVICES.map((s, i) => (
               <Reveal key={s.name}>
                 <div className="border-t border-line py-[30px] md:flex md:gap-10">
-                  <h3 className="text-[23px] font-semibold leading-[1.18] md:w-[340px] md:shrink-0">{s.name}</h3>
+                  <h3 className="text-[23px] font-semibold uppercase leading-[1.18] md:w-[340px] md:shrink-0">{s.name}</h3>
                   <p className="mt-4 text-[16px] leading-[1.5] text-gray md:mt-0">{s.text}</p>
                 </div>
               </Reveal>
@@ -173,7 +173,7 @@ export default function Home() {
             </Reveal>
           </div>
           <p className="mt-11 text-[12px] leading-[1.45] text-muted">
-            * Instagram принадлежит компании Meta Platforms Inc., деятельность которой запрещена на территории Российской Федерации.
+            * Instagram принадлежит компании Meta Platforms Inc., признанной экстремистской организацией, деятельность которой запрещена на территории Российской Федерации.
           </p>
         </Container>
       </section>

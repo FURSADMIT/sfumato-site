@@ -123,6 +123,7 @@ export default function MenuProvider({ children }) {
               <a href="https://t.me/Sfuma_to" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-60">telegram&ensp;↗</a>
               <a href="https://vk.com/sfuma_to" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-60">вконтакте&ensp;↗</a>
               <a href="https://dzen.ru/sfumato" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-60">дзен&ensp;↗</a>
+              <a href="https://instagram.com/sfuma_to" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-60">instagram*&ensp;↗</a>
             </div>
           </div>
           <div>
@@ -131,6 +132,10 @@ export default function MenuProvider({ children }) {
           </div>
         </div>
 
+        {/* Юридическая пометка */}
+        <p className="menu-side mt-auto shrink-0 pt-10 text-[11px] leading-[1.45] text-muted">
+          * Instagram принадлежит компании Meta Platforms Inc., признанной экстремистской организацией, деятельность которой запрещена на территории Российской Федерации.
+        </p>
       </div>
     </MenuCtx.Provider>
   );

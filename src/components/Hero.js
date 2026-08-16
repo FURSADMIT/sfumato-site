@@ -15,8 +15,7 @@ export default function Hero() {
       // Появление hero при загрузке
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
       tl.from(".hero-img", { scale: 1.06, duration: 1.6, ease: "power2.out" })
-        .from(".hero-wordmark", { y: 40, opacity: 0, duration: 1 }, "-=1.1")
-        .from(".hero-meta", { y: 16, opacity: 0, duration: 0.8, stagger: 0.1 }, "-=0.6");
+        .from(".hero-wordmark", { y: 40, opacity: 0, duration: 1 }, "-=1.1");
 
       // Параллакс: фото медленнее скролла, вордмарк уплывает
       gsap.to(".hero-img", {
@@ -58,20 +57,8 @@ export default function Hero() {
       <img
         src="/images/wordmark-white.png"
         alt="sfumàto"
-        className="hero-wordmark absolute bottom-[42px] left-1/2 w-[min(640px,80vw)] -translate-x-1/2 drop-shadow-[0_1px_14px_rgba(0,0,0,0.4)]"
+        className="hero-wordmark absolute bottom-[48px] left-1/2 w-[88vw] -translate-x-1/2 drop-shadow-[0_1px_14px_rgba(0,0,0,0.4)] md:bottom-[66px]"
       />
-
-      {/* Мета-строки */}
-      <div className="hero-meta absolute bottom-[72px] left-6 text-[13px] font-medium leading-[1.4] tracking-[0.01em] text-white [text-shadow:0_1px_12px_rgba(0,0,0,0.35)] md:left-12">
-        БУТИКОВОЕ АГЕНТСТВО ЭСТЕТИЧНЫХ
-        <br />
-        МАРКЕТИНГОВЫХ КАМПАНИЙ
-      </div>
-      <div className="hero-meta absolute bottom-[72px] right-6 hidden text-right text-[13px] font-medium leading-[1.4] tracking-[0.01em] text-white [text-shadow:0_1px_12px_rgba(0,0,0,0.35)] md:right-12 lg:block">
-        МАРКЕТИНГ — ЧЕРЕЗ ЭСТЕТИКУ,
-        <br />
-        СТРАТЕГИЮ И КУЛЬТУРНЫЙ КОНТЕКСТ
-      </div>
     </section>
   );
 }
