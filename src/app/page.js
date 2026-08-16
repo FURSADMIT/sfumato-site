@@ -85,15 +85,15 @@ export default function Home() {
             ПРЕВРАЩАТЬ ЭСТЕТИКУ В ОТКЛИК, А ЦЕННОСТИ БРЕНДА — В ЗНАЧИМЫЙ ОПЫТ ДЛЯ ЛЮДЕЙ
           </SplitHeading>
           <div className="mt-[64px] grid gap-12 md:grid-cols-2 md:gap-8">
-            <Reveal>
-              <ShaderImage src="/images/about-art.png" alt="Минималистичные скульптурные формы" className="aspect-square w-full" effect="breathe" />
+            <Reveal className="max-w-[100vh]">
+              <ShaderImage src="/images/about-art.png" alt="Минималистичные скульптурные формы" className="aspect-[4/3] w-full" effect="cycle" images={["/images/about-art.png","/images/mission-1.png","/images/about-elegance.png","/images/mission-2.png","/images/mission-3.png"]} />
               <h3 className="mt-5 text-[20px] font-bold uppercase leading-[1.2]">МАРКЕТИНГ НА ЯЗЫКЕ ИСКУССТВА</h3>
               <p className="mt-5 text-[16px] leading-[1.54] text-gray">
                 Каждая кампания — это поиск глубинной истины вашего бренда через эстетику. В нашем ДНК возвышенная символика, драматическое напряжение духа и выразительность.
               </p>
             </Reveal>
-            <Reveal delay={0.12}>
-              <ShaderImage src="/images/about-elegance.png" alt="Портрет с драпировками" className="aspect-square w-full" effect="breathe" />
+            <Reveal delay={0.12} className="max-w-[100vh]">
+              <ShaderImage src="/images/about-elegance.png" alt="Портрет с драпировками" className="aspect-[4/3] w-full" effect="cycle" images={["/images/about-elegance.png","/images/mission-3.png","/images/about-art.png","/images/mission-2.png","/images/mission-1.png"]} />
               <h3 className="mt-5 text-[20px] font-bold uppercase leading-[1.2]">ГЛУБИНА, СМЫСЛ И ИЗЯЩЕСТВО</h3>
               <p className="mt-5 text-[16px] leading-[1.54] text-gray">
                 Всё это существует параллельно с текущими современными кодами и символами. Мы вдохновлены проектами с особой глубиной и стремлением к бесконечно простому (или не очень) изяществу.
