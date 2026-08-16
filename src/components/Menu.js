@@ -66,22 +66,19 @@ export default function MenuProvider({ children }) {
       <div ref={overlayRef} className="invisible fixed inset-0 z-50 flex flex-col overflow-y-auto bg-background px-6 pb-6 pt-5 md:px-12 md:pb-10 md:pt-[45px]">
         {/* Верхняя панель */}
         <div className="flex shrink-0 items-center justify-between">
-          <div className="flex items-center gap-5">
-            <img src="/images/mark-white.png" alt="sfumàto" className="size-[30px] invert md:size-[42px]" />
-            <span className="flex items-start gap-3 text-[8px] font-medium uppercase leading-[1.5] tracking-[0.1em] md:text-[9.5px]">
-              <span>
-                ОТКЛИК И ЕЩЁ
-                <br />
-                РАЗ ОТКЛИК
-              </span>
-              <span className="text-muted">/</span>
-              <span>
-                A RESPONSE AND
-                <br />
-                A RESPONSE AGAIN
-              </span>
-            </span>
-          </div>
+          <a
+            href="#"
+            aria-label="На главную"
+            onClick={(e) => {
+              e.preventDefault();
+              close();
+              gsap.delayedCall(0.25, () => lenis?.scrollTo(0, { duration: 1.4 }));
+            }}
+            className="flex cursor-pointer items-center gap-4 transition-opacity hover:opacity-60"
+          >
+            <img src="/images/mark-white.png" alt="" className="size-[30px] invert md:size-[42px]" />
+            <span className="text-[20px] font-bold lowercase leading-none tracking-[-0.01em] md:text-[24px]">sfumàto</span>
+          </a>
           <button aria-label="Закрыть меню" onClick={close} className="relative size-[30px] cursor-pointer transition-opacity hover:opacity-60">
             <span className="absolute left-1/2 top-1/2 h-[2.4px] w-[34px] -translate-x-1/2 -translate-y-1/2 rotate-45 rounded-[2px] bg-ink" />
             <span className="absolute left-1/2 top-1/2 h-[2.4px] w-[34px] -translate-x-1/2 -translate-y-1/2 -rotate-45 rounded-[2px] bg-ink" />

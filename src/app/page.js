@@ -240,20 +240,20 @@ export default function Home() {
               <p className="pt-[14px] text-[17px] leading-[1.5] text-gray">
                 Работаем с российскими и международными брендами и проектами, для которых важны смысл, форма и результат.
               </p>
-              <div className="mt-[34px] flex flex-col gap-3">
+              <div className="mt-[34px] flex flex-col gap-[34px]">
+                <a
+                  href="mailto:sfumato-agency@yandex.ru"
+                  className="flex h-[62px] w-full items-center justify-center bg-ink px-11 text-[14px] font-medium tracking-[0.02em] text-paper transition-colors hover:bg-black"
+                >
+                  НАПИСАТЬ НА ПОЧТУ
+                </a>
                 <a
                   href="https://t.me/Sfuma_to"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex w-full items-center justify-center bg-ink px-11 py-[26px] text-[14px] font-medium tracking-[0.02em] text-paper transition-colors hover:bg-black"
+                  className="flex h-[62px] w-full items-center justify-center bg-ink px-11 text-[14px] font-medium tracking-[0.02em] text-paper transition-colors hover:bg-black"
                 >
-                  ОБСУДИТЬ ПРОЕКТ
-                </a>
-                <a
-                  href="mailto:sfumato-agency@yandex.ru"
-                  className="flex w-full items-center justify-center border border-ink px-11 py-[25px] text-[14px] font-medium tracking-[0.02em] text-ink transition-colors hover:bg-ink hover:text-paper"
-                >
-                  НАПИСАТЬ НА ПОЧТУ
+                  НАПИСАТЬ В TELEGRAM
                 </a>
               </div>
             </Reveal>
