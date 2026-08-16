@@ -13,7 +13,7 @@ export const useMenu = () => useContext(MenuCtx);
 const ITEMS = [
   { n: "01", label: "о проекте", href: "#about" },
   { n: "02", label: "услуги", href: "#services" },
-  { n: "03", label: "миссия", href: "#mission" },
+  { n: "03", label: "сообщество", href: "#community" },
   { n: "04", label: "портфолио", href: null }, // страницы пока нет
   { n: "05", label: "обсудить проект", href: "#contact" },
 ];

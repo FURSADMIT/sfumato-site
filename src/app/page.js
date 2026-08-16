@@ -28,21 +28,6 @@ const SERVICES = [
   },
 ];
 
-const MISSION = [
-  {
-    text: "Пробуждать в восхищённых красотой современниках тысячи нюансов чувства.",
-    img: "/images/mission-1.png",
-  },
-  {
-    text: "Открывать им их собственные, ранее неведомые причины и светлые ориентиры, приобщая к ценностям вашего бренда или проекта.",
-    img: "/images/mission-2.png",
-  },
-  {
-    text: "Находить в бренде то, что вызывает не формальную реакцию, а настоящее ощущение сопричастности: отклик и ещё раз отклик.",
-    img: "/images/mission-3.png",
-  },
-];
-
 const COMMUNITY_LINKS = [
   { name: "telegram", href: "https://t.me/Sfuma_to" },
   { name: "вконтакте", href: "https://vk.com/sfuma_to" },
@@ -93,6 +78,9 @@ export default function Home() {
             <br />
             ЭСТЕТИЧНОГО МАРКЕТИНГА
           </SplitHeading>
+          <SplitHeading as="p" delay={0.1} className="mt-[56px] max-w-[1100px] text-[clamp(1.35rem,2.1vw,1.88rem)] font-semibold uppercase leading-[1.18] tracking-[-0.01em] text-gray-2">
+            ПРЕВРАЩАТЬ ЭСТЕТИКУ В ОТКЛИК, А ЦЕННОСТИ БРЕНДА — В ЗНАЧИМЫЙ ОПЫТ ДЛЯ ЛЮДЕЙ
+          </SplitHeading>
           <div className="mt-[64px] grid gap-12 md:grid-cols-2 md:gap-8">
             <Reveal>
               <ShaderImage src="/images/about-art.png" alt="Минималистичные скульптурные формы" className="aspect-square w-full" />
@@ -122,7 +110,7 @@ export default function Home() {
             </div>
           </Reveal>
           <SplitHeading as="p" className="mt-10 max-w-[1000px] text-[clamp(1.25rem,1.8vw,1.63rem)] font-medium leading-[1.32]">
-            системное развитие бренда в социальных сетях и digital через контент, визуальную среду и эмоциональную связь с аудиторией.
+            Системное развитие бренда в социальных сетях и digital через контент, визуальную среду и эмоциональную связь с аудиторией.
           </SplitHeading>
           <div className="mt-14">
             {SERVICES.map((s, i) => (
@@ -133,31 +121,14 @@ export default function Home() {
                 </div>
               </Reveal>
             ))}
+            <Reveal>
+              <a href="#contact" className="group flex items-center justify-between border-t border-line py-[25px]">
+                <span className="text-[23px] font-semibold">ОБСУДИТЬ ПРОЕКТ</span>
+                <span className="text-[26px] transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5">↗</span>
+              </a>
+            </Reveal>
             <div className="h-px w-full bg-line" />
           </div>
-        </Container>
-      </section>
-
-      {/* МИССИЯ */}
-      <section id="mission" className="pb-[100px] pt-[64px]">
-        <Container>
-          <div className="h-px w-full bg-line" />
-          <Reveal>
-            <div className="mt-14">
-              <SectionLabel>[ МИССИЯ ]</SectionLabel>
-            </div>
-          </Reveal>
-          <div className="mt-14 grid gap-12 md:grid-cols-3 md:gap-8">
-            {MISSION.map((m, i) => (
-              <Reveal key={m.img} delay={i * 0.12}>
-                <p className="text-[15px] leading-[1.52] text-gray md:min-h-[69px]">{m.text}</p>
-                <ShaderImage src={m.img} alt="" className="mt-[22px] aspect-[5/6] w-full" />
-              </Reveal>
-            ))}
-          </div>
-          <SplitHeading as="p" className="mt-14 text-[clamp(1.7rem,3vw,2.75rem)] font-semibold uppercase leading-[1.12] tracking-[-0.01em]">
-            ПРЕВРАЩАТЬ ЭСТЕТИКУ В ОТКЛИК, А ЦЕННОСТИ БРЕНДА — В ЗНАЧИМЫЙ ОПЫТ ДЛЯ ЛЮДЕЙ
-          </SplitHeading>
         </Container>
       </section>
 
@@ -262,7 +233,7 @@ export default function Home() {
       </section>
 
       {/* ФУТЕР */}
-      <footer className="overflow-hidden bg-white pb-0">
+      <footer className="overflow-hidden bg-white pb-10">
         <Container>
           <div className="h-[1.5px] w-full bg-ink" />
           <div className="mt-10 flex flex-wrap items-start justify-between gap-10">
@@ -277,16 +248,20 @@ export default function Home() {
             <nav className="flex flex-col gap-3 text-[15px] font-medium tracking-[0.01em]">
               <a href="#about" className="transition-colors hover:text-muted">[ О ПРОЕКТЕ ]</a>
               <a href="#services" className="transition-colors hover:text-muted">[ УСЛУГИ ]</a>
-              <a href="#mission" className="transition-colors hover:text-muted">[ МАНИФЕСТ ]</a>
+              <a href="#contact" className="transition-colors hover:text-muted">[ ОБСУДИТЬ ПРОЕКТ ]</a>
             </nav>
             <div className="flex flex-col gap-[18px] text-[15px] font-medium">
               <div>
                 <p className="text-[13px] tracking-[0.01em] text-muted">РАБОТА В sfumàto:</p>
-                <p className="mt-1">@…</p>
+                <p className="mt-1">
+                  <a href="mailto:sfumato-agency@yandex.ru" className="transition-colors hover:text-muted">sfumato-agency@yandex.ru</a>
+                </p>
               </div>
               <div>
                 <p className="text-[13px] tracking-[0.01em] text-muted">СВЯЗАТЬСЯ С НАМИ:</p>
-                <p className="mt-1">@sfuma_to&ensp;·&ensp;sfumato-agency@yandex.ru</p>
+                <p className="mt-1">
+                  <a href="mailto:sfumato-agency@yandex.ru" className="transition-colors hover:text-muted">sfumato-agency@yandex.ru</a>
+                </p>
               </div>
             </div>
             <div className="flex items-center gap-3">
