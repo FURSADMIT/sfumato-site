@@ -73,7 +73,7 @@ export default function Home() {
             </div>
           </Reveal>
           <Reveal delay={0.12}>
-            <ShaderImage src="/images/about-2.jpg" alt="Флаконы с янтарной жидкостью" className="aspect-[4/5] w-full" />
+            <ShaderImage src="/images/about-2-green.jpg" alt="Зелёные туфли на пуфе" className="aspect-[4/5] w-full" />
             <div className="px-6 md:pl-10 md:pr-12">
               <h3 className="mt-5 text-[20px] font-bold uppercase leading-[1.2]">ГЛУБИНА, СМЫСЛ И ИЗЯЩЕСТВО</h3>
               <p className="mt-5 max-w-[560px] text-[16px] leading-[1.54] text-gray">

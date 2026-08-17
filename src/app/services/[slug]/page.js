@@ -27,16 +27,11 @@ export default async function ServicePage({ params }) {
 
   return (
     <main>
-      <Header solid />
+      <Header solid allServices />
 
       <section className="pb-[64px] pt-[150px]">
         <Container>
-          <Reveal>
-            <a href="/#services" className="inline-block text-[13px] font-medium tracking-[0.01em] text-ink transition-colors hover:text-muted">
-              [ ← ВСЕ УСЛУГИ ]
-            </a>
-          </Reveal>
-          <SplitHeading className="mt-[48px] max-w-[1100px] text-[clamp(1.9rem,3vw,2.7rem)] font-bold uppercase leading-[1.1] tracking-[-0.01em]">
+          <SplitHeading className="max-w-[1100px] text-[clamp(1.9rem,3vw,2.7rem)] font-bold uppercase leading-[1.1] tracking-[-0.01em]">
             {service.name}
           </SplitHeading>
           <SplitHeading as="p" delay={0.1} className="mt-[44px] max-w-[1250px] text-[clamp(1.25rem,1.9vw,1.7rem)] font-semibold uppercase leading-[1.2] tracking-[-0.01em] text-gray-2">
@@ -52,19 +47,23 @@ export default async function ServicePage({ params }) {
             <div className="mt-12 gap-16 md:flex">
               <Reveal className="md:w-[340px] md:shrink-0">
                 <h2 className="text-[23px] font-semibold uppercase leading-[1.18]">{block.heading}</h2>
-                {block.text?.map((t) => (
-                  <p key={t} className="mt-5 text-[16px] leading-[1.54] text-gray">{t}</p>
-                ))}
-                {block.tags && (
-                  <div className="mt-6 flex flex-wrap gap-2">
-                    {block.tags.map((tag) => (
-                      <span key={tag} className="border border-line px-4 py-2 text-[13px] font-medium tracking-[0.01em]">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                )}
               </Reveal>
+              {!block.steps && (
+                <Reveal delay={0.08} className="mt-6 grow md:mt-0">
+                  {block.text?.map((t) => (
+                    <p key={t} className="max-w-[760px] text-[16px] leading-[1.54] text-gray [&+p]:mt-4">{t}</p>
+                  ))}
+                  {block.tags && (
+                    <div className="mt-6 flex flex-wrap gap-2">
+                      {block.tags.map((tag) => (
+                        <span key={tag} className="border border-line px-4 py-2 text-[13px] font-medium tracking-[0.01em]">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </Reveal>
+              )}
               {block.steps && (
                 <div className="mt-10 grow md:mt-0">
                   {block.steps.map((step, i) => (

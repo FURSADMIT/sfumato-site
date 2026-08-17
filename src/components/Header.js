@@ -9,7 +9,8 @@ import { useMenu } from "@/components/Menu";
  * после хиро — компактная плашка на фоне с блюром и тёмными элементами.
  * Контент всегда скроллится под неё.
  */
-export default function Header({ solid = false }) {
+// allServices: на страницах услуг пункт «УСЛУГИ» показывается как «ВСЕ УСЛУГИ»
+export default function Header({ solid = false, allServices = false }) {
   const [scrolled, setScrolled] = useState(solid);
   const { open } = useMenu();
 
@@ -50,7 +51,7 @@ export default function Header({ solid = false }) {
           </a>
           <nav className="hidden items-center gap-[26px] md:flex">
             <a href="/#about" className={linkCls}>[ О ПРОЕКТЕ ]</a>
-            <a href="/#services" className={linkCls}>[ УСЛУГИ ]</a>
+            <a href="/#services" className={linkCls}>{allServices ? "[ ВСЕ УСЛУГИ ]" : "[ УСЛУГИ ]"}</a>
             <a href="#contact" className={linkCls}>[ ОБСУДИТЬ ПРОЕКТ ]</a>
           </nav>
         </div>
