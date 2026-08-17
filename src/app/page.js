@@ -62,25 +62,27 @@ export default function Home() {
             ЭСТЕТИЧНОГО МАРКЕТИНГА
           </SplitHeading>
         </Container>
-        <div className="mt-[64px] grid md:grid-cols-2">
-          <Reveal>
-            <ShaderImage src="/images/about-1.png" alt="Журнальный разворот — пальто" className="aspect-[4/5] w-full" />
-            <div className="px-6 md:pl-12 md:pr-10">
-              <h3 className="mt-5 text-[20px] font-bold uppercase leading-[1.2]">МАРКЕТИНГ НА ЯЗЫКЕ ИСКУССТВА</h3>
-              <p className="mt-5 max-w-[560px] text-[16px] leading-[1.54] text-gray">
-                Каждая кампания — это поиск глубинной истины вашего бренда через эстетику. В нашем ДНК возвышенная символика, драматическое напряжение духа и выразительность.
-              </p>
-            </div>
-          </Reveal>
-          <Reveal delay={0.12}>
-            <ShaderImage src="/images/about-2-green.jpg" alt="Зелёные туфли на пуфе" className="aspect-[4/5] w-full" />
-            <div className="px-6 md:pl-10 md:pr-12">
-              <h3 className="mt-5 text-[20px] font-bold uppercase leading-[1.2]">ГЛУБИНА, СМЫСЛ И ИЗЯЩЕСТВО</h3>
-              <p className="mt-5 max-w-[560px] text-[16px] leading-[1.54] text-gray">
-                Всё это существует параллельно с текущими современными кодами и символами. Мы вдохновлены проектами с особой глубиной и стремлением к бесконечно простому (или не очень) изяществу.
-              </p>
-            </div>
-          </Reveal>
+        <div className="mt-[64px]">
+          <div className="grid md:grid-cols-2">
+            <Reveal>
+              <ShaderImage src="/images/about-1.png" alt="Журнальный разворот — пальто" className="aspect-[4/3] w-full" />
+              <div className="px-6 md:pl-12 md:pr-10">
+                <h3 className="mt-5 text-[20px] font-bold uppercase leading-[1.2]">МАРКЕТИНГ НА ЯЗЫКЕ ИСКУССТВА</h3>
+                <p className="mt-5 max-w-[560px] text-[16px] leading-[1.54] text-gray">
+                  Каждая кампания — это поиск глубинной истины вашего бренда через эстетику. В нашем ДНК возвышенная символика, драматическое напряжение духа и выразительность.
+                </p>
+              </div>
+            </Reveal>
+            <Reveal delay={0.12}>
+              <ShaderImage src="/images/about-2-green.jpg" alt="Зелёные туфли на пуфе" className="aspect-[4/3] w-full" />
+              <div className="px-6 md:pl-10 md:pr-12">
+                <h3 className="mt-5 text-[20px] font-bold uppercase leading-[1.2]">ГЛУБИНА, СМЫСЛ И ИЗЯЩЕСТВО</h3>
+                <p className="mt-5 max-w-[560px] text-[16px] leading-[1.54] text-gray">
+                  Всё это существует параллельно с текущими современными кодами и символами. Мы вдохновлены проектами с особой глубиной и стремлением к бесконечно простому (или не очень) изяществу.
+                </p>
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
 
