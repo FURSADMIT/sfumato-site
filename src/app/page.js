@@ -57,7 +57,7 @@ export default function Home() {
             <SectionLabel>[ О ПРОЕКТЕ ]</SectionLabel>
           </Reveal>
           <SplitHeading className="mt-[56px] text-[clamp(2rem,3.3vw,2.94rem)] font-bold uppercase leading-[1.1] tracking-[-0.01em]">
-            <span className="text-[1.35em] font-semibold normal-case leading-none">sfumàto</span> — АГЕНТСТВО
+            <span className="text-[1.35em] font-semibold normal-case leading-none">sfumàto</span> — БУТИКОВОЕ АГЕНТСТВО
             <br />
             ЭСТЕТИЧНОГО МАРКЕТИНГА
           </SplitHeading>

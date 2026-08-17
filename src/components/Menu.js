@@ -94,8 +94,9 @@ export default function MenuProvider({ children }) {
           </button>
         </div>
 
-        {/* Пункты */}
-        <nav className="mt-12 w-full max-w-[860px] md:mt-[100px]">
+        {/* Пункты + контакты: flex-раскладка, колонки никогда не пересекаются */}
+        <div className="mt-12 flex flex-col gap-10 md:mt-[100px] lg:flex-row lg:items-start lg:justify-between lg:gap-16">
+        <nav className="w-full max-w-[860px] lg:min-w-0 lg:flex-1">
           {ITEMS.map((item) => (
             <a
               key={item.label}
@@ -109,7 +110,7 @@ export default function MenuProvider({ children }) {
         </nav>
 
         {/* Контакты */}
-        <div className="menu-side mt-10 flex flex-col gap-6 lg:absolute lg:right-12 lg:top-[206px] lg:mt-0 lg:w-[380px] lg:gap-7">
+        <div className="menu-side flex flex-col gap-6 lg:w-[380px] lg:shrink-0 lg:gap-7">
           <div>
             <p className="text-[13px] font-medium tracking-[0.01em] text-muted">СВЯЗАТЬСЯ С НАМИ:</p>
             <p className="mt-1 text-[15px] font-medium">
@@ -131,6 +132,7 @@ export default function MenuProvider({ children }) {
               <a href="https://instagram.com/sfuma_to" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-muted">instagram*</a>
             </div>
           </div>
+        </div>
         </div>
 
         {/* Юридическая пометка */}
