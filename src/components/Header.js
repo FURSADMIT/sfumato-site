@@ -9,12 +9,12 @@ import { useMenu } from "@/components/Menu";
  * после хиро — компактная плашка на фоне с блюром и тёмными элементами.
  * Контент всегда скроллится под неё.
  */
-export default function Header() {
-  const [scrolled, setScrolled] = useState(false);
+export default function Header({ solid = false }) {
+  const [scrolled, setScrolled] = useState(solid);
   const { open } = useMenu();
 
   const lenis = useLenis(({ scroll }) => {
-    const on = scroll > window.innerHeight - 120;
+    const on = solid || scroll > window.innerHeight - 120;
     setScrolled((prev) => (prev === on ? prev : on));
   });
 
@@ -31,9 +31,11 @@ export default function Header() {
       <div className="flex h-16 items-center justify-between px-6 md:px-12">
         <div className="flex items-center gap-6">
           <a
-            href="#"
-            aria-label="Наверх"
+            href="/"
+            aria-label="На главную"
+            className="transition-opacity hover:opacity-60"
             onClick={(e) => {
+              if (window.location.pathname !== "/") return; // с внутренних страниц — обычный переход
               e.preventDefault();
               lenis?.scrollTo(0, { duration: 1.4 });
             }}
@@ -47,8 +49,8 @@ export default function Header() {
             />
           </a>
           <nav className="hidden items-center gap-[26px] md:flex">
-            <a href="#about" className={linkCls}>[ О ПРОЕКТЕ ]</a>
-            <a href="#services" className={linkCls}>[ УСЛУГИ ]</a>
+            <a href="/#about" className={linkCls}>[ О ПРОЕКТЕ ]</a>
+            <a href="/#services" className={linkCls}>[ УСЛУГИ ]</a>
             <a href="#contact" className={linkCls}>[ ОБСУДИТЬ ПРОЕКТ ]</a>
           </nav>
         </div>
