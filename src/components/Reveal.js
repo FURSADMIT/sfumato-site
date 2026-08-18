@@ -13,7 +13,7 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
  *
  * <Reveal delay={0.1}>...любой контент...</Reveal>
  */
-export default function Reveal({ children, delay = 0, y = 40, className = "" }) {
+export default function Reveal({ children, delay = 0, y = 40, className = "", start = "top 85%" }) {
   const ref = useRef(null);
 
   useGSAP(
@@ -26,7 +26,8 @@ export default function Reveal({ children, delay = 0, y = 40, className = "" }) 
         ease: "power3.out",
         scrollTrigger: {
           trigger: ref.current,
-          start: "top 85%", // анимация стартует, когда верх блока на 85% высоты экрана
+          // "top bottom" — для блоков у самого низа страницы, где 85% недостижимы
+          start,
           toggleActions: "play none none none",
         },
       });

@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import Reveal from "@/components/Reveal";
 import SplitHeading from "@/components/SplitHeading";
 import ShaderImage from "@/components/ShaderImage";
+import AutoVideo from "@/components/AutoVideo";
 import Cta from "@/components/Cta";
 import Footer from "@/components/Footer";
 import { SERVICES } from "@/data/services";
@@ -12,27 +13,19 @@ const COMMUNITY_LINKS = [
   { name: "telegram", href: "https://t.me/Sfuma_to" },
   { name: "вконтакте", href: "https://vk.com/sfuma_to" },
   { name: "дзен", href: "https://dzen.ru/sfumato" },
-  { name: "instagram*", href: "https://instagram.com/sfuma_to" },
+  { name: "instagram*", href: "https://www.instagram.com/sfumato_curator" },
 ];
 
 const APPROACH = [
   {
     n: "01",
     title: "ЭСТЕТИКА КАК ИНСТРУМЕНТ ЛИДЕРСТВА",
-    img: "/images/mission-1.png",
-    text: "Работаем с эстетикой как с полноценным инструментом коммуникации. Визуальная культура для нас — рабочий способ решения бизнес-задач. Каждый образ, деталь и решение становятся частью общей стратегии бренда или проекта, помогая занимать уникальное место в сознании аудитории и усиливать своё влияние на рынке.",
+    text: "Работаем с эстетикой как с полноценным инструментом коммуникации: визуальная культура для нас — рабочий способ решения бизнес-задач. Формируем коммуникацию, которая привлекает внимание аудиторий, для которых важны контекст, вкус и доверие, — и создаёт устойчивую эмоциональную связь там, где традиционные инструменты теряют эффективность.",
   },
   {
     n: "02",
-    title: "СОЗДАЁМ ОТКЛИК ТАМ, ГДЕ НЕ РАБОТАЮТ ШАБЛОНЫ",
-    img: "/images/mission-2.png",
-    text: "Работаем с аудиториями, для которых важны контекст, вкус и доверие. В основе нашей работы лежит глубокое понимание ЦА, её мотивов и культурных ориентиров. Формируем коммуникацию, которая привлекает внимание и одновременно генерирует устойчивую эмоциональную связь и подлинный интерес. Находим возможности для развития в нетипичных каналах — там, где традиционные инструменты теряют эффективность.",
-  },
-  {
-    n: "03",
     title: "СОЕДИНЯЕМ КРАСОТУ И РЕЗУЛЬТАТ",
-    img: "/images/mission-3.png",
-    text: "Мы не разделяем маркетинг на эффективный и эстетичный. Самые сильные проекты рождаются там, где стратегическое мышление встречается с выразительным визуальным языком. Работаем и с имиджевыми задачами, и с коммерческой нацеленностью на бизнес-KPI. Высокий положительный ROI даже на труднодостижимые сегменты — наш главный ориентир: узнаваемость, продажи и долгосрочная связь с аудиторией.",
+    text: "Мы не разделяем маркетинг на эффективный и эстетичный: самые сильные проекты рождаются там, где стратегическое мышление встречается с выразительным визуальным языком. Работаем и с имиджевыми задачами, и с коммерческой нацеленностью на бизнес-KPI — наш ориентир: узнаваемость, продажи и долгосрочная связь с аудиторией.",
   },
 ];
 
@@ -51,19 +44,19 @@ export default function Home() {
       <Hero />
 
       {/* О ПРОЕКТЕ */}
-      <section id="about" className="pb-[48px] pt-[70px]">
+      <section id="about" className="pb-8 pt-9 md:pb-[48px] md:pt-[70px]">
         <Container>
           <Reveal>
             <SectionLabel>[ О ПРОЕКТЕ ]</SectionLabel>
           </Reveal>
-          <SplitHeading className="mt-[56px] text-[clamp(2rem,3.3vw,2.94rem)] font-bold uppercase leading-[1.1] tracking-[-0.01em]">
+          <SplitHeading className="mt-8 text-[clamp(2rem,3.3vw,2.94rem)] font-bold uppercase leading-[1.1] tracking-[-0.01em] md:mt-[56px]">
             <span className="text-[1.35em] font-semibold normal-case leading-none">sfumàto</span> — БУТИКОВОЕ АГЕНТСТВО
             <br />
             ЭСТЕТИЧНОГО МАРКЕТИНГА
           </SplitHeading>
         </Container>
-        <div className="mt-[64px]">
-          <div className="grid md:grid-cols-2">
+        <div className="mt-10 md:mt-[64px]">
+          <div className="grid gap-y-10 md:grid-cols-2 md:gap-y-0">
             <Reveal>
               <ShaderImage src="/images/about-1.png" alt="Журнальный разворот — пальто" className="aspect-[4/3] w-full" />
               <div className="px-6 md:pl-12 md:pr-10">
@@ -115,26 +108,18 @@ export default function Home() {
       </section>
 
       {/* ПОДХОД */}
-      <section id="approach" className="pb-[48px] pt-[64px]">
+      <section id="approach" className="pb-8 pt-10 md:pb-[48px] md:pt-[64px]">
         <Container>
           <Reveal>
             <SectionLabel>[ ПОДХОД ]</SectionLabel>
           </Reveal>
-          <SplitHeading as="p" delay={0.1} className="mt-[52px] text-[clamp(1.35rem,2.1vw,1.88rem)] font-semibold uppercase leading-[1.18] tracking-[-0.01em]">
-            ПРЕВРАЩАТЬ ЭСТЕТИКУ В ОТКЛИК, А ЦЕННОСТИ БРЕНДА —
-            <br />В ЗНАЧИМЫЙ ОПЫТ ДЛЯ ЛЮДЕЙ
+          <SplitHeading as="p" delay={0.1} className="mt-8 text-[clamp(1.35rem,2.1vw,1.88rem)] font-semibold uppercase leading-[1.18] tracking-[-0.01em] md:mt-[52px]">
+            ПРЕВРАЩАТЬ ЭСТЕТИКУ В ОТКЛИК, А ЦЕННОСТИ БРЕНДА&nbsp;—
+            <br className="hidden md:block" />В ЗНАЧИМЫЙ ОПЫТ ДЛЯ ЛЮДЕЙ
           </SplitHeading>
         </Container>
-        <Reveal className="mt-[52px]">
-          <video
-            src="/videos/about.mp4"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-            className="w-full object-cover"
-          />
+        <Reveal className="mt-8 md:mt-[52px]">
+          <AutoVideo src="/videos/about.mp4" className="w-full object-cover" />
         </Reveal>
         <Container>
           <div className="mt-6">
@@ -151,7 +136,7 @@ export default function Home() {
       </section>
 
       {/* СООБЩЕСТВО */}
-      <section id="community" className="pb-[96px] pt-[64px]">
+      <section id="community" className="pb-8 pt-10 md:pb-[96px] md:pt-[64px]">
         <Container>
           <div className="h-px w-full bg-line" />
           <Reveal>
@@ -171,18 +156,15 @@ export default function Home() {
                     className="group flex items-center justify-between border-t border-line py-[18px] last:border-b"
                   >
                     <span className="text-[27px] font-medium transition-colors group-hover:text-muted">{l.name}</span>
-                    <span className="text-[20px] text-muted transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5">↗</span>
+                    <span className="text-[20px] text-muted transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5">{"↗︎"}</span>
                   </a>
                 ))}
               </div>
             </Reveal>
             <Reveal delay={0.12} className="mt-10 md:mt-0">
-              <div className="flex flex-col gap-[26px] text-[17px] leading-[1.5] text-gray">
+              <div className="text-[17px] leading-[1.5] text-gray">
                 <p>
-                  Развиваем собственное медиа-пространство для аудитории, которой близки эстетика, интеллектуальные аллюзии, искусство, мода и современная визуальная культура. Для тех, кто хочет наполняться чем-то большим, чем повседневность, привнося в свою жизнь вдохновляющие контексты.
-                </p>
-                <p>
-                  Задача комьюнити — не быть очередным амбассадором тревожности. Хаотичность, резкость и перегрузка — не наши ориентиры. На наш взгляд, осмысленная тишина сегодня дороже. Мы за осознанность, эмоциональную поддержку, спокойный человеческий темп и воплощение камерного пространства по интересам.
+                  Развиваем собственное медиа-пространство для аудитории, которой близки эстетика, интеллектуальные аллюзии, искусство, мода и современная визуальная культура. Задача комьюнити — не быть очередным амбассадором тревожности: мы за осознанность, осмысленную тишину, спокойный человеческий темп и воплощение камерного пространства по интересам.
                 </p>
               </div>
             </Reveal>

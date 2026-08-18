@@ -4,10 +4,10 @@ import SplitHeading from "@/components/SplitHeading";
 // Финальный блок «Обсудить ваш проект» — используется на главной и на страницах услуг
 export default function Cta() {
   return (
-    <section id="contact" className="pb-[120px] pt-[80px]">
+    <section id="contact" className="pb-12 pt-10 md:pb-[120px] md:pt-[80px]">
       <div className="px-6 md:px-12">
         <div className="h-px w-full bg-line" />
-        <div className="mt-16 justify-between gap-12 md:flex">
+        <div className="mt-8 justify-between gap-12 md:mt-16 md:flex">
           <SplitHeading className="text-[clamp(3rem,6.4vw,5.75rem)] font-extrabold uppercase leading-[0.96] tracking-[-0.01em]">
             ОБСУДИТЬ
             <br />

@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="overflow-hidden bg-white">
       <div className="px-6 md:px-12">
         <div className="h-[1.5px] w-full bg-ink" />
-        <div className="mt-10 flex flex-wrap items-start justify-between gap-10">
+        <div className="mt-10 flex flex-col items-start gap-10 md:flex-row md:flex-wrap md:justify-between">
           <div className="text-[13px] font-medium leading-[1.5] tracking-[0.01em]">
             БУТИКОВОЕ АГЕНТСТВО ЭСТЕТИЧНЫХ
             <br />
@@ -46,10 +46,13 @@ export default function Footer() {
             </a>
           </div>
         </div>
-        <Reveal y={60}>
-          <div className="relative mx-auto mt-24 -mb-[18px] w-full max-w-[1340px]">
-            <img src="/images/wordmark-black.png" alt="sfumàto" className="w-full" />
-            <p className="absolute -right-[10px] top-[calc(26%+4px)] text-right text-[10px] font-medium tracking-[0.01em]">
+        <Reveal y={60} start="top bottom">
+          <div className="relative mx-auto mt-10 -mb-[5px] w-full max-w-[1340px] md:mt-24 md:-mb-[18px]">
+            <p className="mb-[3px] text-right text-[9px] font-medium tracking-[0.01em] md:hidden">
+              дизайн и разработка — sfumàto © 2026
+            </p>
+            <img src="/images/wordmark-black.png" alt="sfumàto" className="block w-full" />
+            <p className="absolute -right-[10px] top-[calc(26%+4px)] hidden text-right text-[10px] font-medium tracking-[0.01em] md:block">
               дизайн и разработка — sfumàto © 2026
             </p>
           </div>

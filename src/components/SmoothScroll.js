@@ -26,10 +26,14 @@ export default function SmoothScroll({ children }) {
 
     const lenis = lenisRef.current?.lenis;
     lenis?.on("scroll", ScrollTrigger.update);
+    // На тач-устройствах Lenis не перехватывает скролл — слушаем нативный,
+    // иначе scroll-анимации (параллакс, scrub) замирают на телефонах.
+    window.addEventListener("scroll", ScrollTrigger.update, { passive: true });
 
     return () => {
       gsap.ticker.remove(update);
       lenis?.off("scroll", ScrollTrigger.update);
+      window.removeEventListener("scroll", ScrollTrigger.update);
     };
   }, []);
 

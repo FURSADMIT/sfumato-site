@@ -129,7 +129,7 @@ export default function MenuProvider({ children }) {
               <a href="https://t.me/Sfuma_to" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-muted">telegram</a>
               <a href="https://vk.com/sfuma_to" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-muted">вконтакте</a>
               <a href="https://dzen.ru/sfumato" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-muted">дзен</a>
-              <a href="https://instagram.com/sfuma_to" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-muted">instagram*</a>
+              <a href="https://www.instagram.com/sfumato_curator" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-muted">instagram*</a>
             </div>
           </div>
         </div>

@@ -44,7 +44,7 @@ export default function Hero() {
   );
 
   return (
-    <section ref={root} className="relative h-screen min-h-[640px] overflow-hidden bg-ink">
+    <section ref={root} className="relative h-[68svh] min-h-[440px] overflow-hidden bg-ink md:h-screen md:min-h-[640px]">
       <img
         src="/images/hero.jpg"
         alt="sfumàto — маркетинг на языке искусства"
