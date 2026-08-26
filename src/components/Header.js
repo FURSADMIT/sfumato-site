@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLenis } from "lenis/react";
 import { useMenu } from "@/components/Menu";
 
@@ -18,6 +18,16 @@ export default function Header({ solid = false, allServices = false }) {
     const on = solid || scroll > window.innerHeight - 120;
     setScrolled((prev) => (prev === on ? prev : on));
   });
+
+  // На тач-устройствах Lenis отключён — состояние шапки ведём по нативному скроллу
+  useEffect(() => {
+    const onScroll = () => {
+      const on = solid || window.scrollY > window.innerHeight - 120;
+      setScrolled((prev) => (prev === on ? prev : on));
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [solid]);
 
   const linkCls = `text-[14px] font-medium tracking-[0.01em] transition-opacity hover:opacity-60 ${
     scrolled ? "text-ink" : "text-white [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]"
@@ -38,7 +48,8 @@ export default function Header({ solid = false, allServices = false }) {
             onClick={(e) => {
               if (window.location.pathname !== "/") return; // с внутренних страниц — обычный переход
               e.preventDefault();
-              lenis?.scrollTo(0, { duration: 1.4 });
+              if (window.matchMedia("(pointer: coarse)").matches) window.scrollTo(0, 0);
+              else lenis?.scrollTo(0, { duration: 1.4 });
             }}
           >
             <img

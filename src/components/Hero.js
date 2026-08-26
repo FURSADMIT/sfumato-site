@@ -15,7 +15,9 @@ export default function Hero() {
       // Появление hero при загрузке
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
       tl.from(".hero-img", { scale: 1.06, duration: 1.6, ease: "power2.out" })
-        .from(".hero-wordmark", { y: 40, opacity: 0, duration: 1 }, "-=1.1");
+        // появление — на обёртке, растворение при скролле — на самой картинке:
+        // если анимировать одно свойство одного элемента двумя твинами, на iOS они конфликтуют
+        .from(".hero-wordmark-wrap", { y: 40, opacity: 0, duration: 1 }, "-=1.1");
 
       // Параллакс: фото медленнее скролла, вордмарк уплывает
       gsap.to(".hero-img", {
@@ -54,11 +56,13 @@ export default function Hero() {
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[420px] bg-gradient-to-b from-transparent to-black/50" />
 
       {/* Вордмарк */}
-      <img
-        src="/images/wordmark-white.png"
-        alt="sfumàto"
-        className="hero-wordmark absolute bottom-[48px] left-1/2 w-[88vw] -translate-x-1/2 drop-shadow-[0_1px_14px_rgba(0,0,0,0.4)] md:bottom-[66px]"
-      />
+      <div className="hero-wordmark-wrap absolute bottom-[48px] left-1/2 w-[88vw] -translate-x-1/2 md:bottom-[66px]">
+        <img
+          src="/images/wordmark-white.png"
+          alt="sfumàto"
+          className="hero-wordmark w-full drop-shadow-[0_1px_14px_rgba(0,0,0,0.4)]"
+        />
+      </div>
     </section>
   );
 }

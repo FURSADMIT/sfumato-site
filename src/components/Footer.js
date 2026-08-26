@@ -47,7 +47,7 @@ export default function Footer() {
           </div>
         </div>
         <Reveal y={60} start="top bottom">
-          <div className="relative mx-auto mt-10 -mb-[5px] w-full max-w-[1340px] md:mt-24 md:-mb-[18px]">
+          <div className="relative -mx-5 mt-10 -mb-[10px] max-w-none md:mx-auto md:-mb-[18px] md:mt-24 md:w-full md:max-w-[1340px]">
             <p className="mb-[3px] text-right text-[9px] font-medium tracking-[0.01em] md:hidden">
               дизайн и разработка — sfumàto © 2026
             </p>

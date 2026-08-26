@@ -91,14 +91,16 @@ export default function ShaderImage({ src, alt = "", className = "", effect = "v
       </div>
     );
   }
+  // На мобильных дымку отключаем: ховера на таче нет, и фото навсегда
+  // оставались бы мутными — эффект живёт только с md и выше
   return (
     <div className={`group/fx relative overflow-hidden ${className}`}>
       <img
         src={src}
         alt={alt}
-        className="size-full scale-[1.03] object-cover blur-[5px] transition-[filter,transform] duration-[900ms] ease-out group-hover/fx:scale-[1.06] group-hover/fx:blur-none"
+        className="size-full object-cover transition-[filter,transform] duration-[900ms] ease-out md:scale-[1.03] md:blur-[5px] md:group-hover/fx:scale-[1.06] md:group-hover/fx:blur-none"
       />
-      <div className="pointer-events-none absolute inset-0 bg-white/20 transition-opacity duration-[900ms] ease-out group-hover/fx:opacity-0" />
+      <div className="pointer-events-none absolute inset-0 hidden bg-white/20 transition-opacity duration-[900ms] ease-out group-hover/fx:opacity-0 md:block" />
     </div>
   );
 }

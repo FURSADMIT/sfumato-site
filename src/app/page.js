@@ -94,11 +94,14 @@ export default function Home() {
           <div className="mt-14">
             {SERVICES.map((s) => (
               <Reveal key={s.slug}>
-                <Link href={`/services/${s.slug}`} className="group block border-t border-line py-[30px] md:flex md:gap-10">
-                  <h3 className="text-[23px] font-semibold uppercase leading-[1.18] transition-colors group-hover:text-muted md:w-[340px] md:shrink-0">
-                    {s.name}
-                  </h3>
-                  <p className="mt-4 text-[16px] leading-[1.5] text-gray md:mt-0">{s.short}</p>
+                <Link href={`/services/${s.slug}`} className="group block border-t border-line py-5 md:flex md:gap-10 md:py-[30px]">
+                  <div className="flex items-baseline justify-between gap-4 md:block md:w-[340px] md:shrink-0">
+                    <h3 className="text-[20px] font-semibold uppercase leading-[1.18] transition-colors group-hover:text-muted md:text-[23px]">
+                      {s.name}
+                    </h3>
+                    <span className="text-[18px] text-muted md:hidden">{"↗︎"}</span>
+                  </div>
+                  <p className="mt-4 hidden text-[16px] leading-[1.5] text-gray md:mt-0 md:block">{s.short}</p>
                 </Link>
               </Reveal>
             ))}
@@ -114,7 +117,7 @@ export default function Home() {
             <SectionLabel>[ ПОДХОД ]</SectionLabel>
           </Reveal>
           <SplitHeading as="p" delay={0.1} className="mt-8 text-[clamp(1.35rem,2.1vw,1.88rem)] font-semibold uppercase leading-[1.18] tracking-[-0.01em] md:mt-[52px]">
-            ПРЕВРАЩАТЬ ЭСТЕТИКУ В ОТКЛИК, А ЦЕННОСТИ БРЕНДА&nbsp;—
+            ПРЕВРАЩАТЬ ЭСТЕТИКУ В ОТКЛИК, А ЦЕННОСТИ <span className="whitespace-nowrap">БРЕНДА&nbsp;—</span>
             <br className="hidden md:block" />В ЗНАЧИМЫЙ ОПЫТ ДЛЯ ЛЮДЕЙ
           </SplitHeading>
         </Container>
@@ -134,6 +137,9 @@ export default function Home() {
           </div>
         </Container>
       </section>
+
+      {/* CTA */}
+      <Cta />
 
       {/* СООБЩЕСТВО */}
       <section id="community" className="pb-8 pt-10 md:pb-[96px] md:pt-[64px]">
@@ -174,9 +180,6 @@ export default function Home() {
           </p>
         </Container>
       </section>
-
-      {/* CTA */}
-      <Cta />
 
       {/* ФУТЕР */}
       <Footer />

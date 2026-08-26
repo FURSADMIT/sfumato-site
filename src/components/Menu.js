@@ -37,20 +37,27 @@ export default function MenuProvider({ children }) {
 
   const open = () => {
     setIsOpen(true);
-    lenis?.stop();
+    try { lenis?.stop(); } catch {}
+    document.body.style.overflow = "hidden"; // нативная блокировка фона (на таче Lenis отключён)
     tlRef.current?.timeScale(1).play();
   };
   const close = () => {
     setIsOpen(false);
-    lenis?.start();
+    try { lenis?.start(); } catch {}
+    document.body.style.overflow = "";
     tlRef.current?.timeScale(1.6).reverse();
   };
   const goTo = (e, href) => {
     e.preventDefault();
     close();
     if (!href) return;
-    if (document.querySelector(href)) {
-      gsap.delayedCall(0.25, () => lenis?.scrollTo(href, { duration: 1.4 }));
+    const target = document.querySelector(href);
+    if (target) {
+      const isTouch = window.matchMedia("(pointer: coarse)").matches;
+      gsap.delayedCall(0.25, () => {
+        if (isTouch) target.scrollIntoView();
+        else lenis?.scrollTo(href, { duration: 1.4 });
+      });
     } else {
       // якоря нет на текущей странице — уходим на главную
       window.location.href = "/" + href;
@@ -78,7 +85,11 @@ export default function MenuProvider({ children }) {
               e.preventDefault();
               close();
               if (window.location.pathname === "/") {
-                gsap.delayedCall(0.25, () => lenis?.scrollTo(0, { duration: 1.4 }));
+                const isTouch = window.matchMedia("(pointer: coarse)").matches;
+                gsap.delayedCall(0.25, () => {
+                  if (isTouch) window.scrollTo(0, 0);
+                  else lenis?.scrollTo(0, { duration: 1.4 });
+                });
               } else {
                 window.location.href = "/";
               }

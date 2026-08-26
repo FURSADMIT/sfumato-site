@@ -18,6 +18,16 @@ export default function SmoothScroll({ children }) {
   const lenisRef = useRef(null);
 
   useEffect(() => {
+    // На тач-устройствах Lenis выключаем полностью: iOS скроллит нативно,
+    // а Lenis там конфликтует с fixed-элементами и scroll-анимациями.
+    const isTouch = window.matchMedia("(pointer: coarse)").matches;
+    window.addEventListener("scroll", ScrollTrigger.update, { passive: true });
+
+    if (isTouch) {
+      lenisRef.current?.lenis?.destroy();
+      return () => window.removeEventListener("scroll", ScrollTrigger.update);
+    }
+
     function update(time) {
       lenisRef.current?.lenis?.raf(time * 1000);
     }
@@ -26,9 +36,6 @@ export default function SmoothScroll({ children }) {
 
     const lenis = lenisRef.current?.lenis;
     lenis?.on("scroll", ScrollTrigger.update);
-    // На тач-устройствах Lenis не перехватывает скролл — слушаем нативный,
-    // иначе scroll-анимации (параллакс, scrub) замирают на телефонах.
-    window.addEventListener("scroll", ScrollTrigger.update, { passive: true });
 
     return () => {
       gsap.ticker.remove(update);
