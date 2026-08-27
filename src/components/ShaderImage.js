@@ -22,7 +22,7 @@ const ShaderImageCanvas = dynamic(() => import("./ShaderImageCanvas"), {
  * - "cycle" — слайд-смена: пока курсор на фото, кадры из images листаются
  *   по кругу резкими сменами; при уходе курсора возврат к первому.
  */
-export default function ShaderImage({ src, alt = "", className = "", effect = "veil", hoverSrc, images }) {
+export default function ShaderImage({ src, alt = "", className = "", imgClassName = "", effect = "veil", hoverSrc, images }) {
   const [frame, setFrame] = useState(0);
   const [hovered, setHovered] = useState(false);
   const count = images?.length || 0;
@@ -98,7 +98,7 @@ export default function ShaderImage({ src, alt = "", className = "", effect = "v
       <img
         src={src}
         alt={alt}
-        className="size-full object-cover transition-[filter,transform] duration-[900ms] ease-out md:scale-[1.03] md:blur-[5px] md:group-hover/fx:scale-[1.06] md:group-hover/fx:blur-none"
+        className={`size-full object-cover transition-[filter,transform] duration-[900ms] ease-out md:scale-[1.03] md:blur-[5px] md:group-hover/fx:scale-[1.06] md:group-hover/fx:blur-none ${imgClassName}`}
       />
       <div className="pointer-events-none absolute inset-0 hidden bg-white/20 transition-opacity duration-[900ms] ease-out group-hover/fx:opacity-0 md:block" />
     </div>

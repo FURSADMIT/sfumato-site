@@ -49,10 +49,10 @@ export default function Home() {
           <Reveal>
             <SectionLabel>[ О ПРОЕКТЕ ]</SectionLabel>
           </Reveal>
-          <SplitHeading className="mt-8 text-[clamp(2rem,3.3vw,2.94rem)] font-bold uppercase leading-[1.1] tracking-[-0.01em] md:mt-[56px]">
-            <span className="text-[1.35em] font-semibold normal-case leading-none">sfumàto</span> — БУТИКОВОЕ АГЕНТСТВО
+          <SplitHeading className="mt-8 text-[clamp(1.7rem,3.3vw,2.94rem)] font-bold uppercase leading-[1.12] tracking-[-0.01em] md:mt-[56px]">
+            <span className="text-[1.35em] font-semibold normal-case leading-none">sfumàto</span> — БУТИКОВОЕ АГЕНТСТВО ЭСТЕТИЧНОГО
             <br />
-            ЭСТЕТИЧНОГО МАРКЕТИНГА
+            МАРКЕТИНГА
           </SplitHeading>
         </Container>
         <div className="mt-10 md:mt-[64px]">
@@ -67,7 +67,7 @@ export default function Home() {
               </div>
             </Reveal>
             <Reveal delay={0.12}>
-              <ShaderImage src="/images/about-2-green.jpg" alt="Зелёные туфли на пуфе" className="aspect-[4/3] w-full" />
+              <ShaderImage src="/images/about-2-green.jpg" alt="Зелёные туфли на пуфе" className="aspect-[4/3] w-full" imgClassName="object-[50%_30%]" />
               <div className="px-6 md:pl-10 md:pr-12">
                 <h3 className="mt-5 text-[20px] font-bold uppercase leading-[1.2]">ГЛУБИНА, СМЫСЛ И ИЗЯЩЕСТВО</h3>
                 <p className="mt-5 max-w-[560px] text-[16px] leading-[1.54] text-gray">
@@ -89,7 +89,7 @@ export default function Home() {
             </div>
           </Reveal>
           <SplitHeading as="p" className="mt-10 max-w-[1250px] text-[clamp(1.35rem,2.1vw,1.88rem)] font-semibold uppercase leading-[1.18] tracking-[-0.01em]">
-            Системное развитие бренда в социальных сетях и digital через контент, визуальную среду и эмоциональную связь с аудиторией
+            Системное развитие бренда в социальных сетях и digital через контент, визуал и эмоциональную связь с аудиторией
           </SplitHeading>
           <div className="mt-14">
             {SERVICES.map((s) => (
@@ -117,8 +117,8 @@ export default function Home() {
             <SectionLabel>[ ПОДХОД ]</SectionLabel>
           </Reveal>
           <SplitHeading as="p" delay={0.1} className="mt-8 text-[clamp(1.35rem,2.1vw,1.88rem)] font-semibold uppercase leading-[1.18] tracking-[-0.01em] md:mt-[52px]">
-            ПРЕВРАЩАТЬ ЭСТЕТИКУ В ОТКЛИК, А ЦЕННОСТИ <span className="whitespace-nowrap">БРЕНДА&nbsp;—</span>
-            <br className="hidden md:block" />В ЗНАЧИМЫЙ ОПЫТ ДЛЯ ЛЮДЕЙ
+            ПРЕВРАЩАТЬ ЭСТЕТИКУ <span className="whitespace-nowrap">В&nbsp;ОТКЛИК,</span> А ЦЕННОСТИ <span className="whitespace-nowrap">БРЕНДА&nbsp;—</span>
+            <br className="hidden md:block" /><span className="whitespace-nowrap">В&nbsp;ЗНАЧИМЫЙ</span> ОПЫТ <span className="whitespace-nowrap">ДЛЯ&nbsp;ЛЮДЕЙ</span>
           </SplitHeading>
         </Container>
         <Reveal className="mt-8 md:mt-[52px]">
@@ -150,7 +150,11 @@ export default function Home() {
               <SectionLabel>[ СООБЩЕСТВО ]</SectionLabel>
             </div>
           </Reveal>
-          <div className="mt-11 gap-20 md:flex">
+          <SplitHeading as="p" delay={0.1} className="mt-8 text-[clamp(1.15rem,2.1vw,1.88rem)] font-semibold uppercase leading-[1.18] tracking-[-0.01em] md:mt-[52px]">
+            <span className="whitespace-nowrap">КАМЕРНОЕ МЕДИА-ПРОСТРАНСТВО</span> <span className="whitespace-nowrap">ОБ&nbsp;ЭСТЕТИКЕ,</span> ИСКУССТВЕ
+            <br className="hidden md:block" /> <span className="whitespace-nowrap">И&nbsp;СОВРЕМЕННОЙ</span> ВИЗУАЛЬНОЙ КУЛЬТУРЕ
+          </SplitHeading>
+          <div className="mt-8 gap-20 md:mt-11 md:flex">
             <Reveal className="md:w-[420px] md:shrink-0">
               <div>
                 {COMMUNITY_LINKS.map((l) => (
@@ -170,7 +174,7 @@ export default function Home() {
             <Reveal delay={0.12} className="mt-10 md:mt-0">
               <div className="text-[17px] leading-[1.5] text-gray">
                 <p>
-                  Развиваем собственное медиа-пространство для аудитории, которой близки эстетика, интеллектуальные аллюзии, искусство, мода и современная визуальная культура. Задача комьюнити — не быть очередным амбассадором тревожности: мы за осознанность, осмысленную тишину, спокойный человеческий темп и воплощение камерного пространства по интересам.
+                  Для аудитории, которой близки эстетика, интеллектуальные аллюзии, искусство, мода и современная визуальная культура. Задача комьюнити — не быть очередным амбассадором тревожности: мы за осознанность, осмысленную тишину, спокойный человеческий темп и воплощение камерного пространства по интересам.
                 </p>
               </div>
             </Reveal>

@@ -19,7 +19,7 @@ export default function Cta() {
             </p>
             <div className="mt-[34px] flex flex-col gap-[34px]">
               <a
-                href="mailto:sfumato-agency@yandex.ru"
+                href="mailto:hello@sfuma-to.ru"
                 className="flex h-[62px] w-full items-center justify-center bg-ink px-11 text-[14px] font-medium tracking-[0.02em] text-paper transition-opacity hover:opacity-60"
               >
                 НАПИСАТЬ НА ПОЧТУ

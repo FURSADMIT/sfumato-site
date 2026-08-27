@@ -125,13 +125,13 @@ export default function MenuProvider({ children }) {
           <div>
             <p className="text-[13px] font-medium tracking-[0.01em] text-muted">СВЯЗАТЬСЯ С НАМИ:</p>
             <p className="mt-1 text-[15px] font-medium">
-              <a href="mailto:sfumato-agency@yandex.ru" className="transition-colors hover:text-muted">sfumato-agency@yandex.ru</a>
+              <a href="mailto:hello@sfuma-to.ru" className="transition-colors hover:text-muted">hello@sfuma-to.ru</a>
             </p>
           </div>
           <div>
             <p className="text-[13px] font-medium tracking-[0.01em] text-muted">РАБОТА В <span className="text-[1.35em] font-normal leading-none">sfumàto</span>:</p>
             <p className="mt-1 text-[15px] font-medium">
-              <a href="mailto:sfumato-agency@yandex.ru" className="transition-colors hover:text-muted">sfumato-agency@yandex.ru</a>
+              <a href="mailto:vacancy@sfuma-to.ru" className="transition-colors hover:text-muted">vacancy@sfuma-to.ru</a>
             </p>
           </div>
           <div>

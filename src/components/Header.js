@@ -39,7 +39,7 @@ export default function Header({ solid = false, allServices = false }) {
         scrolled ? "border-b border-line bg-background/90 backdrop-blur-md" : "border-b border-transparent"
       }`}
     >
-      <div className="flex h-16 items-center justify-between px-6 md:px-12">
+      <div className="flex h-12 items-center justify-between px-6 md:h-16 md:px-12">
         <div className="flex items-center gap-6">
           <a
             href="/"

@@ -56,7 +56,7 @@ export default function Hero() {
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[420px] bg-gradient-to-b from-transparent to-black/50" />
 
       {/* Вордмарк */}
-      <div className="hero-wordmark-wrap absolute bottom-[48px] left-1/2 w-[88vw] -translate-x-1/2 md:bottom-[66px]">
+      <div className="hero-wordmark-wrap absolute bottom-6 left-1/2 w-[94vw] -translate-x-1/2 md:bottom-[66px] md:w-[88vw]">
         <img
           src="/images/wordmark-white.png"
           alt="sfumàto"

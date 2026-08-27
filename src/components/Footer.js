@@ -24,13 +24,13 @@ export default function Footer() {
             <div>
               <p className="text-[13px] tracking-[0.01em] text-muted">РАБОТА В <span className="text-[1.35em] font-normal leading-none">sfumàto</span>:</p>
               <p className="mt-1">
-                <a href="mailto:sfumato-agency@yandex.ru" className="transition-colors hover:text-muted">sfumato-agency@yandex.ru</a>
+                <a href="mailto:vacancy@sfuma-to.ru" className="transition-colors hover:text-muted">vacancy@sfuma-to.ru</a>
               </p>
             </div>
             <div>
               <p className="text-[13px] tracking-[0.01em] text-muted">СВЯЗАТЬСЯ С НАМИ:</p>
               <p className="mt-1">
-                <a href="mailto:sfumato-agency@yandex.ru" className="transition-colors hover:text-muted">sfumato-agency@yandex.ru</a>
+                <a href="mailto:hello@sfuma-to.ru" className="transition-colors hover:text-muted">hello@sfuma-to.ru</a>
               </p>
             </div>
           </div>
@@ -47,12 +47,14 @@ export default function Footer() {
           </div>
         </div>
         <Reveal y={60} start="top bottom">
-          <div className="relative -mx-5 mt-10 -mb-[10px] max-w-none md:mx-auto md:-mb-[18px] md:mt-24 md:w-full md:max-w-[1340px]">
-            <p className="mb-[3px] text-right text-[9px] font-medium tracking-[0.01em] md:hidden">
-              дизайн и разработка — sfumàto © 2026
-            </p>
-            <img src="/images/wordmark-black.png" alt="sfumàto" className="block w-full" />
-            <p className="absolute -right-[10px] top-[calc(26%+4px)] hidden text-right text-[10px] font-medium tracking-[0.01em] md:block">
+          <div className="relative -mx-5 mt-10 md:mx-auto md:mt-24 md:w-full md:max-w-[1340px]">
+            {/* обрезаем низ букв контейнером с фиксированной пропорцией — работает одинаково
+                в Safari и Chrome, в отличие от отрицательного margin (он давал «зазор» на iPhone) */}
+            <div className="overflow-hidden [aspect-ratio:1956/404] md:[aspect-ratio:1956/392]">
+              <img src="/images/wordmark-black.png" alt="sfumàto" className="block w-full" />
+            </div>
+            {/* подпись: на мобильном — в «небе» над буквами umà, на десктопе — над перекладиной t */}
+            <p className="absolute left-[21.5%] top-[19%] whitespace-nowrap text-left text-[7px] font-medium tracking-[0.01em] md:left-auto md:-right-[10px] md:top-[calc(26%+4px)] md:text-right md:text-[10px]">
               дизайн и разработка — sfumàto © 2026
             </p>
           </div>
