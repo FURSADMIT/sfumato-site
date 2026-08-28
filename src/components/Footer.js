@@ -15,11 +15,6 @@ export default function Footer() {
               <Link href="/privacy" className="transition-colors hover:text-muted">ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</Link>
             </p>
           </div>
-          <nav className="flex flex-col gap-3 text-[15px] font-medium tracking-[0.01em]">
-            <Link href="/#about" className="transition-colors hover:text-muted">[ О ПРОЕКТЕ ]</Link>
-            <Link href="/#services" className="transition-colors hover:text-muted">[ УСЛУГИ ]</Link>
-            <a href="#contact" className="transition-colors hover:text-muted">[ ОБСУДИТЬ ПРОЕКТ ]</a>
-          </nav>
           <div className="flex flex-col gap-[18px] text-[15px] font-medium">
             <div>
               <p className="text-[13px] tracking-[0.01em] text-muted">РАБОТА В <span className="text-[1.35em] font-normal leading-none">sfumàto</span>:</p>
