@@ -74,7 +74,7 @@ export default async function ServicePage({ params }) {
                   {block.steps.map((step, i) => (
                     <Reveal key={step.title} delay={i * 0.08}>
                       <div className="border-t border-line py-6 first:border-t-0 first:pt-0 md:flex md:gap-10 md:py-8">
-                        <p className="text-[15px] font-medium text-muted md:w-[60px] md:shrink-0">/{i + 1}</p>
+                        <p className="text-[13px] font-medium tracking-[0.02em] text-muted md:w-[60px] md:shrink-0">{String(i + 1).padStart(2, "0")}</p>
                         <div className="md:w-[300px] md:shrink-0">
                           <h3 className="mt-2 text-[17px] font-semibold leading-[1.3] md:mt-0">{step.title}</h3>
                         </div>
