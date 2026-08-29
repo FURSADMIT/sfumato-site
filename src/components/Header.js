@@ -10,8 +10,8 @@ import { useMenu } from "@/components/Menu";
  * Контент всегда скроллится под неё.
  */
 const T = {
-  ru: { about: "[ О ПРОЕКТЕ ]", services: "[ УСЛУГИ ]", all: "[ ВСЕ УСЛУГИ ]", contact: "[ ОБСУДИТЬ ПРОЕКТ ]", back: "[ НАЗАД ]", home: "/" },
-  en: { about: "[ ABOUT ]", services: "[ SERVICES ]", all: "[ ALL SERVICES ]", contact: "[ DISCUSS A PROJECT ]", back: "[ BACK ]", home: "/en" },
+  ru: { about: "[ О ПРОЕКТЕ ]", services: "[ УСЛУГИ ]", all: "[ ВСЕ УСЛУГИ ]", contact: "[ ОБСУДИТЬ ВАШ ПРОЕКТ ]", back: "[ НАЗАД ]", home: "/" },
+  en: { about: "[ ABOUT ]", services: "[ SERVICES ]", all: "[ ALL SERVICES ]", contact: "[ DISCUSS YOUR PROJECT ]", back: "[ BACK ]", home: "/en" },
 };
 
 // allServices: на страницах услуг пункт «УСЛУГИ» показывается как «ВСЕ УСЛУГИ»
