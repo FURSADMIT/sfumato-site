@@ -10,7 +10,8 @@ import { useMenu } from "@/components/Menu";
  * Контент всегда скроллится под неё.
  */
 // allServices: на страницах услуг пункт «УСЛУГИ» показывается как «ВСЕ УСЛУГИ»
-export default function Header({ solid = false, allServices = false }) {
+// backHref: ссылка «Назад» в мобильной шапке (кнопка всегда под рукой при скролле)
+export default function Header({ solid = false, allServices = false, backHref = null }) {
   const [scrolled, setScrolled] = useState(solid);
   const { open } = useMenu();
 
@@ -44,7 +45,7 @@ export default function Header({ solid = false, allServices = false }) {
           <a
             href="/"
             aria-label="На главную"
-            className="transition-opacity hover:opacity-60"
+            className={`transition-opacity hover:opacity-60 ${backHref ? "hidden" : ""}`}
             onClick={(e) => {
               if (window.location.pathname !== "/") return; // с внутренних страниц — обычный переход
               e.preventDefault();
@@ -60,6 +61,11 @@ export default function Header({ solid = false, allServices = false }) {
               }`}
             />
           </a>
+          {backHref && (
+            <a href={backHref} className={linkCls}>
+              [ НАЗАД ]
+            </a>
+          )}
           <nav className="hidden items-center gap-[26px] md:flex">
             <a href="/#about" className={linkCls}>[ О ПРОЕКТЕ ]</a>
             <a href="/#services" className={linkCls}>{allServices ? "[ ВСЕ УСЛУГИ ]" : "[ УСЛУГИ ]"}</a>

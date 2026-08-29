@@ -44,16 +44,11 @@ export default async function ServicePage({ params }) {
 
   return (
     <main>
-      <Header solid allServices />
+      <Header solid allServices backHref="/#services" />
 
       <section className="pb-8 pt-[104px] md:pb-[64px] md:pt-[150px]">
         <Container>
-          <Reveal>
-            <a href="/#services" className="inline-block text-[13px] font-medium tracking-[0.01em] text-ink transition-colors hover:text-muted">
-              [ НАЗАД ]
-            </a>
-          </Reveal>
-          <SplitHeading className="mt-6 max-w-[1100px] text-[clamp(1.9rem,3vw,2.7rem)] font-bold uppercase leading-[1.1] tracking-[-0.01em] md:mt-[40px]">
+          <SplitHeading className="max-w-[1100px] text-[clamp(1.9rem,3vw,2.7rem)] font-bold uppercase leading-[1.1] tracking-[-0.01em]">
             {service.name}
           </SplitHeading>
           <SplitHeading as="p" delay={0.1} className="mt-4 max-w-[1250px] text-[clamp(1.25rem,1.9vw,1.7rem)] font-semibold uppercase leading-[1.2] tracking-[-0.01em] text-gray-2 md:mt-[44px]">
