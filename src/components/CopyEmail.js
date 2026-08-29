@@ -7,7 +7,12 @@ import { copyToClipboard } from "@/components/copyToClipboard";
  * Кнопка «Написать на почту»: вместо mailto (открывает пустой почтовый клиент,
  * которым в РФ мало кто пользуется) копирует адрес в буфер и показывает подтверждение.
  */
-export default function CopyEmail({ email, className = "" }) {
+export default function CopyEmail({
+  email,
+  className = "",
+  idleLabel = "НАПИСАТЬ НА ПОЧТУ",
+  copiedLabel = "АДРЕС ПОЧТЫ СКОПИРОВАН",
+}) {
   const [copied, setCopied] = useState(false);
   const timer = useRef(null);
 
@@ -22,7 +27,7 @@ export default function CopyEmail({ email, className = "" }) {
 
   return (
     <button type="button" onClick={copy} className={`cursor-pointer ${className}`}>
-      {copied ? "АДРЕС ПОЧТЫ СКОПИРОВАН" : "НАПИСАТЬ НА ПОЧТУ"}
+      {copied ? copiedLabel : idleLabel}
     </button>
   );
 }

@@ -4,6 +4,7 @@ import { createContext, useContext, useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useLenis } from "lenis/react";
+import { usePathname } from "next/navigation";
 import CopyEmailInline from "@/components/CopyEmailInline";
 
 gsap.registerPlugin(useGSAP);
@@ -11,19 +12,45 @@ gsap.registerPlugin(useGSAP);
 const MenuCtx = createContext({ open: () => {} });
 export const useMenu = () => useContext(MenuCtx);
 
-const ITEMS = [
-  { label: "о проекте", href: "#about" },
-  { label: "услуги", href: "#services" },
-  { label: "экспертно", href: "/expert" },
-  { label: "сообщество", href: "#community" },
-  { label: "обсудить ваш проект", href: "#contact" },
-];
+const ITEMS = {
+  ru: [
+    { label: "о проекте", href: "#about" },
+    { label: "услуги", href: "#services" },
+    { label: "экспертно", href: "/expert" },
+    { label: "сообщество", href: "#community" },
+    { label: "обсудить ваш проект", href: "#contact" },
+  ],
+  en: [
+    { label: "about", href: "#about" },
+    { label: "services", href: "#services" },
+    { label: "insights", href: "/en/expert" },
+    { label: "community", href: "#community" },
+    { label: "discuss your project", href: "#contact" },
+  ],
+};
+
+const T = {
+  ru: { contact: "СВЯЗАТЬСЯ С НАМИ:", careers: <>РАБОТА В <span className="text-[1.35em] font-normal leading-none">sfumàto</span>:</>, copied: "адрес скопирован", switch: "[ EN ]" },
+  en: { contact: "CONTACT US:", careers: <>CAREERS AT <span className="text-[1.35em] font-normal leading-none">sfumàto</span>:</>, copied: "address copied", switch: "[ RU ]" },
+};
 
 export default function MenuProvider({ children }) {
   const [isOpen, setIsOpen] = useState(false);
   const overlayRef = useRef(null);
   const tlRef = useRef(null);
   const lenis = useLenis();
+  const pathname = usePathname() || "/";
+  const isEn = pathname === "/en" || pathname.startsWith("/en/");
+  const lang = isEn ? "en" : "ru";
+  const t = T[lang];
+  // адрес той же страницы на другом языке (у политики англ. версии нет — ведём на главную)
+  const switchHref = isEn
+    ? (pathname.replace(/^\/en/, "") || "/")
+    : pathname.startsWith("/privacy")
+      ? "/en"
+      : pathname === "/"
+        ? "/en"
+        : "/en" + pathname;
 
   useGSAP(
     () => {
@@ -66,8 +93,8 @@ export default function MenuProvider({ children }) {
         else lenis?.scrollTo(href, { duration: 1.4 });
       });
     } else {
-      // якоря нет на текущей странице — уходим на главную
-      window.location.href = "/" + href;
+      // якоря нет на текущей странице — уходим на главную (своего языка)
+      window.location.href = (isEn ? "/en/" : "/") + href;
     }
   };
 
@@ -91,14 +118,14 @@ export default function MenuProvider({ children }) {
             onClick={(e) => {
               e.preventDefault();
               close();
-              if (window.location.pathname === "/") {
+              if (window.location.pathname === (isEn ? "/en" : "/") || window.location.pathname === "/en/") {
                 const isTouch = window.matchMedia("(pointer: coarse)").matches;
                 gsap.delayedCall(0.25, () => {
                   if (isTouch) window.scrollTo(0, 0);
                   else lenis?.scrollTo(0, { duration: 1.4 });
                 });
               } else {
-                window.location.href = "/";
+                window.location.href = isEn ? "/en" : "/";
               }
             }}
             className="flex cursor-pointer items-center gap-4 transition-opacity hover:opacity-60"
@@ -114,7 +141,7 @@ export default function MenuProvider({ children }) {
         {/* Пункты + контакты: flex-раскладка, колонки никогда не пересекаются */}
         <div className="mt-12 flex flex-col gap-10 md:mt-[100px] lg:flex-row lg:items-start lg:justify-between lg:gap-16">
         <nav className="w-full max-w-[860px] lg:min-w-0 lg:flex-1">
-          {ITEMS.map((item) => (
+          {ITEMS[lang].map((item) => (
             <a
               key={item.label}
               href={item.href}
@@ -129,15 +156,20 @@ export default function MenuProvider({ children }) {
         {/* Контакты */}
         <div className="menu-side flex flex-col gap-6 lg:w-[380px] lg:shrink-0 lg:gap-7">
           <div>
-            <p className="text-[13px] font-medium tracking-[0.01em] text-muted">СВЯЗАТЬСЯ С НАМИ:</p>
+            <a href={switchHref} className="text-[15px] font-medium tracking-[0.01em] transition-colors hover:text-muted">
+              {t.switch}
+            </a>
+          </div>
+          <div>
+            <p className="text-[13px] font-medium tracking-[0.01em] text-muted">{t.contact}</p>
             <p className="mt-1 text-[15px] font-medium">
-              <CopyEmailInline email="hello@sfuma-to.ru" className="transition-colors hover:text-muted" />
+              <CopyEmailInline email="hello@sfuma-to.ru" copiedLabel={t.copied} className="transition-colors hover:text-muted" />
             </p>
           </div>
           <div>
-            <p className="text-[13px] font-medium tracking-[0.01em] text-muted">РАБОТА В <span className="text-[1.35em] font-normal leading-none">sfumàto</span>:</p>
+            <p className="text-[13px] font-medium tracking-[0.01em] text-muted">{t.careers}</p>
             <p className="mt-1 text-[15px] font-medium">
-              <CopyEmailInline email="vacancy@sfuma-to.ru" className="transition-colors hover:text-muted" />
+              <CopyEmailInline email="vacancy@sfuma-to.ru" copiedLabel={t.copied} className="transition-colors hover:text-muted" />
             </p>
           </div>
           <div>

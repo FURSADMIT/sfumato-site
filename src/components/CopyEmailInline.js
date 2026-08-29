@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import { copyToClipboard } from "@/components/copyToClipboard";
 
 /** Текстовая ссылка-почта, которая по клику копирует адрес вместо mailto. */
-export default function CopyEmailInline({ email, className = "" }) {
+export default function CopyEmailInline({ email, className = "", copiedLabel = "адрес скопирован" }) {
   const [copied, setCopied] = useState(false);
   const timer = useRef(null);
 
@@ -21,7 +21,7 @@ export default function CopyEmailInline({ email, className = "" }) {
     <button type="button" onClick={copy} className={`relative cursor-pointer text-left ${className}`}>
       {/* адрес всегда занимает место (невидимый при подтверждении) — ширина не прыгает */}
       <span className={copied ? "invisible" : undefined}>{email}</span>
-      {copied && <span className="absolute inset-0 whitespace-nowrap text-left">адрес скопирован</span>}
+      {copied && <span className="absolute inset-0 whitespace-nowrap text-left">{copiedLabel}</span>}
     </button>
   );
 }

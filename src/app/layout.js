@@ -17,7 +17,7 @@ export const metadata = {
   metadataBase: new URL("https://sfuma-to.ru"),
   title: "sfumàto — эстетичный маркетинг: SMM, стратегия, таргет",
   description: DESCRIPTION,
-  alternates: { canonical: "/" },
+  alternates: { canonical: "/", languages: { ru: "/", en: "/en" } },
   openGraph: {
     type: "website",
     locale: "ru_RU",

@@ -9,9 +9,15 @@ import { useMenu } from "@/components/Menu";
  * после хиро — компактная плашка на фоне с блюром и тёмными элементами.
  * Контент всегда скроллится под неё.
  */
+const T = {
+  ru: { about: "[ О ПРОЕКТЕ ]", services: "[ УСЛУГИ ]", all: "[ ВСЕ УСЛУГИ ]", contact: "[ ОБСУДИТЬ ПРОЕКТ ]", back: "[ НАЗАД ]", home: "/" },
+  en: { about: "[ ABOUT ]", services: "[ SERVICES ]", all: "[ ALL SERVICES ]", contact: "[ DISCUSS A PROJECT ]", back: "[ BACK ]", home: "/en" },
+};
+
 // allServices: на страницах услуг пункт «УСЛУГИ» показывается как «ВСЕ УСЛУГИ»
-// backHref: ссылка «Назад» в мобильной шапке (кнопка всегда под рукой при скролле)
-export default function Header({ solid = false, allServices = false, backHref = null }) {
+// backHref: ссылка «Назад» в шапке внутренних страниц (кнопка всегда под рукой при скролле)
+export default function Header({ solid = false, allServices = false, backHref = null, lang = "ru" }) {
+  const t = T[lang];
   const [scrolled, setScrolled] = useState(solid);
   const { open } = useMenu();
 
@@ -43,7 +49,7 @@ export default function Header({ solid = false, allServices = false, backHref = 
       <div className="flex h-12 items-center justify-between px-6 md:h-16 md:px-12">
         <div className="flex items-center gap-6">
           <a
-            href="/"
+            href={t.home}
             aria-label="На главную"
             className={`transition-opacity hover:opacity-60 ${backHref ? "hidden" : ""}`}
             onClick={(e) => {
@@ -63,13 +69,13 @@ export default function Header({ solid = false, allServices = false, backHref = 
           </a>
           {backHref && (
             <a href={backHref} className={linkCls}>
-              [ НАЗАД ]
+              {t.back}
             </a>
           )}
           <nav className={`items-center gap-[26px] ${backHref ? "hidden" : "hidden md:flex"}`}>
-            <a href="/#about" className={linkCls}>[ О ПРОЕКТЕ ]</a>
-            <a href="/#services" className={linkCls}>{allServices ? "[ ВСЕ УСЛУГИ ]" : "[ УСЛУГИ ]"}</a>
-            <a href="#contact" className={linkCls}>[ ОБСУДИТЬ ПРОЕКТ ]</a>
+            <a href={`${t.home === "/" ? "" : t.home}/#about`} className={linkCls}>{t.about}</a>
+            <a href={`${t.home === "/" ? "" : t.home}/#services`} className={linkCls}>{allServices ? t.all : t.services}</a>
+            <a href="#contact" className={linkCls}>{t.contact}</a>
           </nav>
         </div>
         <button
