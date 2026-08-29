@@ -13,7 +13,24 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const service = getService(slug);
-  return { title: service ? `${service.name} — sfumàto` : "sfumàto" };
+  if (!service) return { title: "sfumàto" };
+  const title = `${service.name} — sfumàto`;
+  const description = service.lead || service.short;
+  const url = `https://sfuma-to.ru/services/${service.slug}/`;
+  return {
+    title,
+    description,
+    alternates: { canonical: `/services/${service.slug}/` },
+    openGraph: {
+      type: "article",
+      locale: "ru_RU",
+      url,
+      siteName: "sfumàto",
+      title,
+      description,
+      images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "sfumàto" }],
+    },
+  };
 }
 
 function Container({ children, className = "" }) {

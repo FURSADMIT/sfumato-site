@@ -58,7 +58,7 @@ export default function Home() {
         <div className="mt-10 md:mt-[64px]">
           <div className="grid gap-y-10 md:grid-cols-2 md:gap-y-0">
             <Reveal>
-              <ShaderImage src="/images/about-1.png" alt="Журнальный разворот — пальто" className="aspect-[4/3] w-full" />
+              <ShaderImage src="/images/about-1.jpg" alt="Журнальный разворот — пальто" className="aspect-[4/3] w-full" />
               <div className="px-6 md:pl-12 md:pr-10">
                 <h3 className="mt-5 text-[20px] font-bold uppercase leading-[1.2]">МАРКЕТИНГ НА ЯЗЫКЕ ИСКУССТВА</h3>
                 <p className="mt-5 max-w-[560px] text-[16px] leading-[1.54] text-gray">
