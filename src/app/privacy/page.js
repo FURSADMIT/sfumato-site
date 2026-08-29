@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Header from "@/components/Header";
 
 export const metadata = {
   title: "Политика конфиденциальности — sfumàto",
@@ -77,16 +78,9 @@ const SECTIONS = [
 export default function PrivacyPage() {
   return (
     <main className="min-h-screen">
-      <div className="px-6 md:px-12">
-        {/* Верхняя панель */}
-        <div className="flex items-center justify-between pt-10">
-          <Link href="/" className="flex items-center gap-6 transition-opacity hover:opacity-60">
-            <img src="/images/mark-white.png" alt="sfumàto" className="size-[42px] invert" />
-            <span className="text-[13px] font-medium tracking-[0.01em]">[ НА ГЛАВНУЮ ]</span>
-          </Link>
-        </div>
-
-        <h1 className="mt-24 max-w-[900px] text-[clamp(1.8rem,3vw,2.75rem)] font-semibold uppercase leading-[1.12] tracking-[-0.01em]">
+      <Header solid backHref="/" />
+      <div className="px-6 pt-[104px] md:px-12 md:pt-[150px]">
+        <h1 className="max-w-[900px] text-[clamp(1.8rem,3vw,2.75rem)] font-semibold uppercase leading-[1.12] tracking-[-0.01em]">
           ПОЛИТИКА В ОТНОШЕНИИ ОБРАБОТКИ ПЕРСОНАЛЬНЫХ ДАННЫХ
         </h1>
 
