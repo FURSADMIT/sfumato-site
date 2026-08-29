@@ -1,0 +1,62 @@
+import { notFound } from "next/navigation";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import Cta from "@/components/Cta";
+import Reveal from "@/components/Reveal";
+import SplitHeading from "@/components/SplitHeading";
+import { ARTICLES, getArticle } from "@/data/articles";
+
+export function generateStaticParams() {
+  return ARTICLES.filter((a) => a.slug).map((a) => ({ slug: a.slug }));
+}
+
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const article = getArticle(slug);
+  return {
+    title: article ? `${article.title} — sfumàto` : "sfumàto",
+    description: article?.excerpt,
+  };
+}
+
+export default async function ArticlePage({ params }) {
+  const { slug } = await params;
+  const article = getArticle(slug);
+  if (!article || !article.body) notFound();
+
+  return (
+    <main>
+      <Header solid backHref="/expert" />
+
+      <section className="pb-8 pt-[104px] md:pb-[56px] md:pt-[150px]">
+        <div className="px-6 md:px-12">
+          <p className="flex items-baseline gap-4 text-[13px] font-medium tracking-[0.02em] text-muted">
+            <span>{article.date}</span>
+            <span className="uppercase">{article.type}</span>
+          </p>
+          <SplitHeading className="mt-5 max-w-[1100px] text-[clamp(1.9rem,3vw,2.7rem)] font-bold uppercase leading-[1.1] tracking-[-0.01em]">
+            {article.title}
+          </SplitHeading>
+        </div>
+      </section>
+
+      <section className="pb-12 md:pb-[88px]">
+        <div className="px-6 md:px-12">
+          <div className="h-px w-full bg-line" />
+          <Reveal className="mt-8 md:mt-12">
+            <div className="max-w-[760px]">
+              {article.body.map((p) => (
+                <p key={p} className="text-[16px] leading-[1.6] text-gray [&+p]:mt-5 md:text-[17px]">
+                  {p}
+                </p>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <Cta />
+      <Footer />
+    </main>
+  );
+}

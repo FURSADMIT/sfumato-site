@@ -14,6 +14,7 @@ export const useMenu = () => useContext(MenuCtx);
 const ITEMS = [
   { label: "о проекте", href: "#about" },
   { label: "услуги", href: "#services" },
+  { label: "экспертно", href: "/expert" },
   { label: "сообщество", href: "#community" },
   { label: "обсудить ваш проект", href: "#contact" },
 ];
@@ -52,6 +53,11 @@ export default function MenuProvider({ children }) {
     e.preventDefault();
     close();
     if (!href) return;
+    // обычные страницы (не якоря) — простой переход
+    if (href.startsWith("/")) {
+      gsap.delayedCall(0.15, () => { window.location.href = href; });
+      return;
+    }
     const target = document.querySelector(href);
     if (target) {
       const isTouch = window.matchMedia("(pointer: coarse)").matches;
