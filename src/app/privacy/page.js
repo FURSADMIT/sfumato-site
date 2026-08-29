@@ -100,7 +100,6 @@ export default function PrivacyPage() {
               </div>
             </section>
           ))}
-          <div className="h-px w-full bg-line" />
         </div>
 
         <footer className="flex flex-wrap justify-between gap-4 border-t border-ink py-8 text-[13px] font-medium tracking-[0.01em]">
