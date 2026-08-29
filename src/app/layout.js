@@ -11,11 +11,11 @@ const ntSomic = localFont({
 });
 
 const DESCRIPTION =
-  "Бутиковое агентство эстетичных маркетинговых кампаний. Маркетинг — через эстетику, стратегию и культурный контекст.";
+  "Бутиковое маркетинговое агентство: SMM-стратегия и ведение социальных сетей, инфлюенс-маркетинг, motion-дизайн, таргет и Яндекс Директ. Маркетинг через эстетику и смысл.";
 
 export const metadata = {
   metadataBase: new URL("https://sfuma-to.ru"),
-  title: "sfumàto — агентство эстетичного маркетинга",
+  title: "sfumàto — эстетичный маркетинг: SMM, стратегия, таргет",
   description: DESCRIPTION,
   alternates: { canonical: "/" },
   openGraph: {
@@ -23,13 +23,13 @@ export const metadata = {
     locale: "ru_RU",
     url: "https://sfuma-to.ru",
     siteName: "sfumàto",
-    title: "sfumàto — агентство эстетичного маркетинга",
+    title: "sfumàto — эстетичный маркетинг: SMM, стратегия, таргет",
     description: DESCRIPTION,
     images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "sfumàto" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "sfumàto — агентство эстетичного маркетинга",
+    title: "sfumàto — эстетичный маркетинг: SMM, стратегия, таргет",
     description: DESCRIPTION,
     images: ["/og.jpg"],
   },

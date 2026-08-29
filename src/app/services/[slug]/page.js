@@ -10,12 +10,29 @@ export function generateStaticParams() {
   return SERVICES.map((s) => ({ slug: s.slug }));
 }
 
+// SEO-описания для мета-тегов (не видны на странице, видимый lead не трогаем)
+const SEO_DESCRIPTIONS = {
+  consulting:
+    "Консультация по маркетингу и SMM: аудит, проверка гипотез и точечная стратегия развития соцсетей и личного бренда. Фокусный разбор задач без долгого цикла.",
+  strategy:
+    "SMM-стратегия для бренда: контент-стратегия, рубрикатор, анализ конкурентов и дорожная карта развития социальных сетей. Ясность и фокус на всех этапах.",
+  smm:
+    "SMM-сопровождение и ведение социальных сетей под ключ: контент, продакшн, модерация и рекламное сопровождение. Соцсети, работающие на бизнес-показатели.",
+  influence:
+    "Инфлюенс-маркетинг: смысловые коллаборации с блогерами и инфлюенсерами, подбор, интеграции и посевы под задачи бренда.",
+  "motion-ai":
+    "Motion-дизайн и AI-креативы: виральный контент, AR-эффекты и анимация для соцсетей. Вовлекающие креативы, которые замечают.",
+  target:
+    "Таргетированная реклама в соцсетях, Яндекс Директ и CPA: настройка, ведение и оптимизация рекламных кампаний под результат.",
+};
+
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const service = getService(slug);
   if (!service) return { title: "sfumàto" };
   const title = `${service.name} — sfumàto`;
-  const description = service.lead || service.short;
+  const description =
+    SEO_DESCRIPTIONS[service.slug] || service.lead || service.short;
   const url = `https://sfuma-to.ru/services/${service.slug}/`;
   return {
     title,

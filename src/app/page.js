@@ -58,7 +58,7 @@ export default function Home() {
         <div className="mt-10 md:mt-[64px]">
           <div className="grid gap-y-10 md:grid-cols-2 md:gap-y-0">
             <Reveal>
-              <ShaderImage src="/images/about-1.jpg" alt="Журнальный разворот — пальто" className="aspect-[4/3] w-full" />
+              <ShaderImage src="/images/about-1.jpg" alt="Эстетичная предметная съёмка для бренда одежды — журнальный разворот с пальто" className="aspect-[4/3] w-full" />
               <div className="px-6 md:pl-12 md:pr-10">
                 <h3 className="mt-5 text-[20px] font-bold uppercase leading-[1.2]">МАРКЕТИНГ НА ЯЗЫКЕ ИСКУССТВА</h3>
                 <p className="mt-5 max-w-[560px] text-[16px] leading-[1.54] text-gray">
@@ -67,7 +67,7 @@ export default function Home() {
               </div>
             </Reveal>
             <Reveal delay={0.12}>
-              <ShaderImage src="/images/about-2-green.jpg" alt="Зелёные туфли на пуфе" className="aspect-[4/3] w-full" imgClassName="object-[50%_30%]" />
+              <ShaderImage src="/images/about-2-green.jpg" alt="Эстетичный контент для бренда — зелёные туфли на пуфе" className="aspect-[4/3] w-full" imgClassName="object-[50%_30%]" />
               <div className="px-6 md:pl-10 md:pr-12">
                 <h3 className="mt-5 text-[20px] font-bold uppercase leading-[1.2]">ГЛУБИНА, СМЫСЛ И ИЗЯЩЕСТВО</h3>
                 <p className="mt-5 max-w-[560px] text-[16px] leading-[1.54] text-gray">
