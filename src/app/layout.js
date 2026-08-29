@@ -3,6 +3,7 @@ import Script from "next/script";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import MenuProvider from "@/components/Menu";
+import CookieNotice from "@/components/CookieNotice";
 
 const ntSomic = localFont({
   src: "../../public/fonts/NT_Somic-VF.ttf",
@@ -75,6 +76,7 @@ export default function RootLayout({ children }) {
         </noscript>
         <SmoothScroll>
           <MenuProvider>{children}</MenuProvider>
+          <CookieNotice />
         </SmoothScroll>
       </body>
     </html>

@@ -6,7 +6,7 @@ export const SERVICES_EN = [
     slug: "consulting",
     name: "consulting",
     short:
-      "An ideal format for focused problem-solving, hypothesis testing and precise adjustments. Recommended for personal blogs and projects at the stage of actively shaping — or refining — their strategy.",
+      "An ideal format for focused problem-solving, hypothesis testing and precise adjustments. Recommended for brands, projects and personal blogs at the stage of actively shaping or refining their strategy.",
     lead: "Focused problem-solving, hypothesis testing and precise adjustments",
     blocks: [
       {
