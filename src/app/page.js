@@ -19,12 +19,12 @@ const COMMUNITY_LINKS = [
 const APPROACH = [
   {
     n: "01",
-    title: "ЭСТЕТИКА КАК ИНСТРУМЕНТ ЛИДЕРСТВА",
-    text: "Работаем с эстетикой как с полноценным инструментом коммуникации: визуальная культура для нас — рабочий способ решения бизнес-задач. Формируем коммуникацию, привлекающую внимание сегментов, для которых важны контекст, вкус и доверие. Создаём устойчивую эмоциональную связь там, где традиционные инструменты теряют эффективность.",
+    title: "ЛИДЕРСТВО ЧЕРЕЗ ЭСТЕТИКУ",
+    text: "Работаем с эстетикой как с полноценным инструментом коммуникации: визуальная культура для нас — рабочий способ решения бизнес-задач. Формируем коммуникацию, привлекающую внимание сегментов, для которых важны контекст, чувство формы и доверие. Создаём устойчивую эмоциональную связь там, где традиционные инструменты теряют эффективность.",
   },
   {
     n: "02",
-    title: "СОЕДИНЯЕМ КРАСОТУ И РЕЗУЛЬТАТ",
+    title: "КРАСОТА И РЕЗУЛЬТАТ",
     text: "Мы не разделяем маркетинг на эффективный и эстетичный: самые сильные проекты рождаются там, где стратегическое мышление встречается с выразительным визуальным языком. Работаем и с имиджевыми задачами, и с коммерческой нацеленностью на бизнес-KPI — наш ориентир: узнаваемость, продажи и долгосрочная связь с аудиторией.",
   },
 ];
@@ -88,8 +88,8 @@ export default function Home() {
               <SectionLabel>[ УСЛУГИ ]</SectionLabel>
             </div>
           </Reveal>
-          <SplitHeading as="p" className="mt-10 max-w-[1250px] text-[clamp(1.35rem,2.1vw,1.88rem)] font-semibold uppercase leading-[1.18] tracking-[-0.01em]">
-            Системное развитие в социальных сетях и digital через контент, визуал и эмоциональную связь с аудиторией
+          <SplitHeading as="p" className="mt-10 max-w-[1250px] text-[clamp(1.7rem,2.1vw,1.88rem)] font-semibold uppercase leading-[1.18] tracking-[-0.01em]">
+            Системное развитие в социальных сетях и digital
           </SplitHeading>
           <div className="mt-14">
             {SERVICES.map((s) => (
@@ -116,9 +116,11 @@ export default function Home() {
           <Reveal>
             <SectionLabel>[ ПОДХОД ]</SectionLabel>
           </Reveal>
-          <SplitHeading as="p" delay={0.1} className="mt-8 text-[clamp(1.35rem,2.1vw,1.88rem)] font-semibold uppercase leading-[1.18] tracking-[-0.01em] md:mt-[52px]">
-            ПРЕВРАЩАЕМ ЭСТЕТИКУ <span className="whitespace-nowrap">В&nbsp;ОТКЛИК,</span> А ЦЕННОСТИ <span className="whitespace-nowrap">БРЕНДА&nbsp;—</span>
-            <br className="hidden md:block" /><span className="whitespace-nowrap">В&nbsp;ЗНАЧИМЫЙ</span> ОПЫТ <span className="whitespace-nowrap">ДЛЯ&nbsp;ЛЮДЕЙ</span>
+          <SplitHeading as="p" delay={0.1} className="mt-8 text-[clamp(1.7rem,2.1vw,1.88rem)] font-semibold uppercase leading-[1.18] tracking-[-0.01em] md:mt-[52px]">
+            ПРЕВРАЩАЕМ ЭСТЕТИКУ <span className="whitespace-nowrap">В&nbsp;ОТКЛИК,</span> А ЦЕННОСТИ{" "}
+            <span className="whitespace-nowrap">БРЕНДА&nbsp;—<span className="md:hidden">&nbsp;В&nbsp;ЗНАЧИМЫЙ</span></span>
+            <br className="hidden md:block" />
+            <span className="hidden md:inline">В&nbsp;ЗНАЧИМЫЙ </span>ОПЫТ <span className="whitespace-nowrap">ДЛЯ&nbsp;ЛЮДЕЙ</span>
           </SplitHeading>
         </Container>
         <Reveal className="mt-8 md:mt-[52px]">
@@ -150,9 +152,8 @@ export default function Home() {
               <SectionLabel>[ СООБЩЕСТВО ]</SectionLabel>
             </div>
           </Reveal>
-          <SplitHeading as="p" delay={0.1} className="mt-8 text-[clamp(1.15rem,2.1vw,1.88rem)] font-semibold uppercase leading-[1.18] tracking-[-0.01em] md:mt-[52px]">
-            <span className="whitespace-nowrap">КАМЕРНОЕ МЕДИА-ПРОСТРАНСТВО</span> <span className="whitespace-nowrap">ОБ&nbsp;ЭСТЕТИКЕ,</span> ИСКУССТВЕ
-            <br className="hidden md:block" /> <span className="whitespace-nowrap">И&nbsp;СОВРЕМЕННОЙ</span> ВИЗУАЛЬНОЙ КУЛЬТУРЕ
+          <SplitHeading as="p" delay={0.1} className="mt-8 text-[clamp(1.7rem,2.1vw,1.88rem)] font-semibold uppercase leading-[1.18] tracking-[-0.01em] md:mt-[52px]">
+            КАМЕРНОЕ <span className="whitespace-nowrap">МЕДИА-ПРОСТРАНСТВО</span>
           </SplitHeading>
           <div className="mt-8 gap-20 md:mt-11 md:flex">
             <Reveal className="md:w-[420px] md:shrink-0">
@@ -165,7 +166,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="group flex items-center justify-between border-t border-line py-[18px] last:border-b"
                   >
-                    <span className="text-[27px] font-medium transition-colors group-hover:text-muted">{l.name}</span>
+                    <span className="text-[20px] font-medium transition-colors group-hover:text-muted md:text-[27px]">{l.name}</span>
                     <span className="text-[20px] text-muted transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5">{"↗︎"}</span>
                   </a>
                 ))}
