@@ -29,22 +29,27 @@ export default async function ServicePage({ params }) {
     <main>
       <Header solid allServices />
 
-      <section className="pb-[64px] pt-[150px]">
+      <section className="pb-8 pt-[104px] md:pb-[64px] md:pt-[150px]">
         <Container>
-          <SplitHeading className="max-w-[1100px] text-[clamp(1.9rem,3vw,2.7rem)] font-bold uppercase leading-[1.1] tracking-[-0.01em]">
+          <Reveal>
+            <a href="/#services" className="inline-block text-[13px] font-medium tracking-[0.01em] text-ink transition-colors hover:text-muted">
+              [ НАЗАД ]
+            </a>
+          </Reveal>
+          <SplitHeading className="mt-6 max-w-[1100px] text-[clamp(1.9rem,3vw,2.7rem)] font-bold uppercase leading-[1.1] tracking-[-0.01em] md:mt-[40px]">
             {service.name}
           </SplitHeading>
-          <SplitHeading as="p" delay={0.1} className="mt-[44px] max-w-[1250px] text-[clamp(1.25rem,1.9vw,1.7rem)] font-semibold uppercase leading-[1.2] tracking-[-0.01em] text-gray-2">
+          <SplitHeading as="p" delay={0.1} className="mt-4 max-w-[1250px] text-[clamp(1.25rem,1.9vw,1.7rem)] font-semibold uppercase leading-[1.2] tracking-[-0.01em] text-gray-2 md:mt-[44px]">
             {service.lead}
           </SplitHeading>
         </Container>
       </section>
 
       {service.blocks.map((block) => (
-        <section key={block.heading} className="pb-[72px]">
+        <section key={block.heading} className="pb-10 md:pb-[72px]">
           <Container>
             <div className="h-px w-full bg-line" />
-            <div className="mt-12 gap-16 md:flex">
+            <div className="mt-8 gap-16 md:mt-12 md:flex">
               <Reveal className="md:w-[340px] md:shrink-0">
                 <h2 className="text-[23px] font-semibold uppercase leading-[1.18]">{block.heading}</h2>
               </Reveal>
@@ -65,10 +70,10 @@ export default async function ServicePage({ params }) {
                 </Reveal>
               )}
               {block.steps && (
-                <div className="mt-10 grow md:mt-0">
+                <div className="mt-6 grow md:mt-0">
                   {block.steps.map((step, i) => (
                     <Reveal key={step.title} delay={i * 0.08}>
-                      <div className="border-t border-line py-8 first:border-t-0 first:pt-0 md:flex md:gap-10">
+                      <div className="border-t border-line py-6 first:border-t-0 first:pt-0 md:flex md:gap-10 md:py-8">
                         <p className="text-[15px] font-medium text-muted md:w-[60px] md:shrink-0">/{i + 1}</p>
                         <div className="md:w-[300px] md:shrink-0">
                           <h3 className="mt-2 text-[17px] font-semibold leading-[1.3] md:mt-0">{step.title}</h3>
