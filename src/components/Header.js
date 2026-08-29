@@ -66,7 +66,7 @@ export default function Header({ solid = false, allServices = false, backHref = 
               [ НАЗАД ]
             </a>
           )}
-          <nav className="hidden items-center gap-[26px] md:flex">
+          <nav className={`items-center gap-[26px] ${backHref ? "hidden" : "hidden md:flex"}`}>
             <a href="/#about" className={linkCls}>[ О ПРОЕКТЕ ]</a>
             <a href="/#services" className={linkCls}>{allServices ? "[ ВСЕ УСЛУГИ ]" : "[ УСЛУГИ ]"}</a>
             <a href="#contact" className={linkCls}>[ ОБСУДИТЬ ПРОЕКТ ]</a>
