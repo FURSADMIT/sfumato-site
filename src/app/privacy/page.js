@@ -110,11 +110,6 @@ export default function PrivacyPage() {
         </div>
 
         <footer className="flex flex-wrap justify-between gap-4 border-t border-ink py-8 text-[13px] font-medium tracking-[0.01em]">
-          <span>
-            БУТИКОВОЕ АГЕНТСТВО ЭСТЕТИЧНЫХ
-            <br />
-            МАРКЕТИНГОВЫХ КАМПАНИЙ
-          </span>
           <span className="font-medium lowercase">дизайн и разработка — sfumàto © 2026</span>
         </footer>
       </div>

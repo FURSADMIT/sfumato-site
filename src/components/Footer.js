@@ -9,12 +9,7 @@ export default function Footer() {
         <div className="h-[1.5px] w-full bg-ink" />
         <div className="mt-10 flex flex-col items-start gap-7 md:flex-row md:flex-wrap md:justify-between md:gap-10">
           <div className="text-[13px] font-medium leading-[1.5] tracking-[0.01em]">
-            БУТИКОВОЕ АГЕНТСТВО ЭСТЕТИЧНЫХ
-            <br />
-            МАРКЕТИНГОВЫХ КАМПАНИЙ
-            <p className="mt-6">
-              <Link href="/privacy" className="transition-colors hover:text-muted">ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</Link>
-            </p>
+            <Link href="/privacy" className="transition-colors hover:text-muted">ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</Link>
           </div>
           <div className="flex flex-col gap-[18px] text-[15px] font-medium">
             <div>
