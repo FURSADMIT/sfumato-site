@@ -18,8 +18,10 @@ export default function CopyEmailInline({ email, className = "" }) {
   };
 
   return (
-    <button type="button" onClick={copy} className={`cursor-pointer text-left ${className}`}>
-      {copied ? "адрес скопирован" : email}
+    <button type="button" onClick={copy} className={`relative cursor-pointer text-left ${className}`}>
+      {/* адрес всегда занимает место (невидимый при подтверждении) — ширина не прыгает */}
+      <span className={copied ? "invisible" : undefined}>{email}</span>
+      {copied && <span className="absolute inset-0 text-left">адрес скопирован</span>}
     </button>
   );
 }
