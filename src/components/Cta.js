@@ -1,5 +1,6 @@
 import Reveal from "@/components/Reveal";
 import SplitHeading from "@/components/SplitHeading";
+import CopyEmail from "@/components/CopyEmail";
 
 // Финальный блок «Обсудить ваш проект» — используется на главной и на страницах услуг
 export default function Cta() {
@@ -18,12 +19,10 @@ export default function Cta() {
               Работаем с российскими и международными брендами и проектами, для которых важны смысл, форма и результат.
             </p>
             <div className="mt-[34px] flex flex-col gap-[34px]">
-              <a
-                href="mailto:hello@sfuma-to.ru"
+              <CopyEmail
+                email="hello@sfuma-to.ru"
                 className="flex h-[62px] w-full items-center justify-center bg-ink px-11 text-[14px] font-medium tracking-[0.02em] text-paper transition-opacity hover:opacity-60"
-              >
-                НАПИСАТЬ НА ПОЧТУ
-              </a>
+              />
               <a
                 href="https://t.me/Sfmt_curator"
                 target="_blank"

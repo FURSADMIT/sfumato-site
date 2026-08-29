@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
+import CopyEmailInline from "@/components/CopyEmailInline";
 
 export default function Footer() {
   return (
@@ -19,13 +20,13 @@ export default function Footer() {
             <div>
               <p className="text-[13px] tracking-[0.01em] text-muted">РАБОТА В <span className="text-[1.35em] font-normal leading-none">sfumàto</span>:</p>
               <p className="mt-1">
-                <a href="mailto:vacancy@sfuma-to.ru" className="transition-colors hover:text-muted">vacancy@sfuma-to.ru</a>
+                <CopyEmailInline email="vacancy@sfuma-to.ru" className="transition-colors hover:text-muted" />
               </p>
             </div>
             <div>
               <p className="text-[13px] tracking-[0.01em] text-muted">СВЯЗАТЬСЯ С НАМИ:</p>
               <p className="mt-1">
-                <a href="mailto:hello@sfuma-to.ru" className="transition-colors hover:text-muted">hello@sfuma-to.ru</a>
+                <CopyEmailInline email="hello@sfuma-to.ru" className="transition-colors hover:text-muted" />
               </p>
             </div>
           </div>
