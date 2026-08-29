@@ -34,7 +34,7 @@ function Container({ children, className = "" }) {
 }
 
 function SectionLabel({ children }) {
-  return <p className="text-[13px] font-medium tracking-[0.01em] text-ink">{children}</p>;
+  return <p className="text-[13px] font-medium tracking-[0.14em] text-ink">{children}</p>;
 }
 
 export default function Home() {
@@ -47,7 +47,7 @@ export default function Home() {
       <section id="about" className="pb-8 pt-9 md:pb-[48px] md:pt-[70px]">
         <Container>
           <Reveal>
-            <SectionLabel>[ О ПРОЕКТЕ ]</SectionLabel>
+            <SectionLabel>О ПРОЕКТЕ</SectionLabel>
           </Reveal>
           <SplitHeading className="mt-8 text-[clamp(1.7rem,3.3vw,2.94rem)] font-bold uppercase leading-[1.12] tracking-[-0.01em] md:mt-[56px]">
             <span className="text-[1.35em] font-semibold normal-case leading-none">sfumàto</span> — БУТИКОВОЕ АГЕНТСТВО ЭСТЕТИЧНОГО
@@ -85,7 +85,7 @@ export default function Home() {
           <div className="h-px w-full bg-line" />
           <Reveal>
             <div className="mt-10">
-              <SectionLabel>[ УСЛУГИ ]</SectionLabel>
+              <SectionLabel>УСЛУГИ</SectionLabel>
             </div>
           </Reveal>
           <SplitHeading as="p" className="mt-10 max-w-[1250px] text-[clamp(1.7rem,2.1vw,1.88rem)] font-semibold uppercase leading-[1.18] tracking-[-0.01em]">
@@ -114,7 +114,7 @@ export default function Home() {
       <section id="approach" className="pb-8 pt-10 md:pb-[48px] md:pt-[64px]">
         <Container>
           <Reveal>
-            <SectionLabel>[ ПОДХОД ]</SectionLabel>
+            <SectionLabel>ПОДХОД</SectionLabel>
           </Reveal>
           <SplitHeading as="p" delay={0.1} className="mt-8 text-[clamp(1.7rem,2.1vw,1.88rem)] font-semibold uppercase leading-[1.18] tracking-[-0.01em] md:mt-[52px]">
             ПРЕВРАЩАЕМ ЭСТЕТИКУ <span className="whitespace-nowrap">В&nbsp;ОТКЛИК,</span> А ЦЕННОСТИ{" "}
@@ -149,7 +149,7 @@ export default function Home() {
           <div className="h-px w-full bg-line" />
           <Reveal>
             <div className="mt-11">
-              <SectionLabel>[ СООБЩЕСТВО ]</SectionLabel>
+              <SectionLabel>СООБЩЕСТВО</SectionLabel>
             </div>
           </Reveal>
           <SplitHeading as="p" delay={0.1} className="mt-8 text-[clamp(1.7rem,2.1vw,1.88rem)] font-semibold uppercase leading-[1.18] tracking-[-0.01em] md:mt-[52px]">
