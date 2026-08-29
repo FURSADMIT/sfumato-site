@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="overflow-hidden bg-white">
       <div className="px-6 md:px-12">
         <div className="h-[1.5px] w-full bg-ink" />
-        <div className="mt-10 flex flex-col items-start gap-10 md:flex-row md:flex-wrap md:justify-between">
+        <div className="mt-10 flex flex-col items-start gap-7 md:flex-row md:flex-wrap md:justify-between md:gap-10">
           <div className="text-[13px] font-medium leading-[1.5] tracking-[0.01em]">
             БУТИКОВОЕ АГЕНТСТВО ЭСТЕТИЧНЫХ
             <br />

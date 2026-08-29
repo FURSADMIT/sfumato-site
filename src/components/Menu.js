@@ -4,6 +4,7 @@ import { createContext, useContext, useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useLenis } from "lenis/react";
+import CopyEmailInline from "@/components/CopyEmailInline";
 
 gsap.registerPlugin(useGSAP);
 
@@ -96,8 +97,7 @@ export default function MenuProvider({ children }) {
             }}
             className="flex cursor-pointer items-center gap-4 transition-opacity hover:opacity-60"
           >
-            <img src="/images/mark-white.png" alt="" className="size-[30px] invert md:size-[42px]" />
-            <span className="text-[30px] font-bold lowercase leading-none tracking-[-0.01em] md:text-[42px]">sfumàto</span>
+            <img src="/images/mark-white.png" alt="sfumàto" className="size-[42px] invert" />
           </a>
           <button aria-label="Закрыть меню" onClick={close} className="relative size-[30px] cursor-pointer transition-opacity hover:opacity-60">
             <span className="absolute left-1/2 top-1/2 h-[2.4px] w-[34px] -translate-x-1/2 -translate-y-1/2 rotate-45 rounded-[2px] bg-ink" />
@@ -125,31 +125,31 @@ export default function MenuProvider({ children }) {
           <div>
             <p className="text-[13px] font-medium tracking-[0.01em] text-muted">СВЯЗАТЬСЯ С НАМИ:</p>
             <p className="mt-1 text-[15px] font-medium">
-              <a href="mailto:hello@sfuma-to.ru" className="transition-colors hover:text-muted">hello@sfuma-to.ru</a>
+              <CopyEmailInline email="hello@sfuma-to.ru" className="transition-colors hover:text-muted" />
             </p>
           </div>
           <div>
             <p className="text-[13px] font-medium tracking-[0.01em] text-muted">РАБОТА В <span className="text-[1.35em] font-normal leading-none">sfumàto</span>:</p>
             <p className="mt-1 text-[15px] font-medium">
-              <a href="mailto:vacancy@sfuma-to.ru" className="transition-colors hover:text-muted">vacancy@sfuma-to.ru</a>
+              <CopyEmailInline email="vacancy@sfuma-to.ru" className="transition-colors hover:text-muted" />
             </p>
           </div>
           <div>
-            <p className="text-[13px] font-medium tracking-[0.01em] text-muted">СОЦСЕТИ:</p>
-            <div className="mt-1 flex flex-col gap-1 text-[15px] font-medium">
-              <a href="https://t.me/Sfuma_to" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-muted">telegram</a>
-              <a href="https://vk.com/sfuma_to" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-muted">вконтакте</a>
-              <a href="https://dzen.ru/sfumato" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-muted">дзен</a>
-              <a href="https://www.instagram.com/sfumato_curator" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-muted">instagram*</a>
+            <div className="flex items-center gap-3">
+              <a href="https://t.me/Sfuma_to" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-60">
+                <img src="/images/social-1.svg" alt="Telegram" className="size-10" />
+              </a>
+              <a href="https://vk.com/sfuma_to" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-60">
+                <img src="/images/social-2.svg" alt="ВКонтакте" className="size-10" />
+              </a>
+              <a href="https://dzen.ru/sfumato" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-60">
+                <img src="/images/social-3.svg" alt="Дзен" className="size-10" />
+              </a>
             </div>
           </div>
         </div>
         </div>
 
-        {/* Юридическая пометка */}
-        <p className="menu-side mt-auto shrink-0 pt-10 text-[11px] leading-[1.45] text-muted">
-          * Instagram принадлежит компании Meta Platforms Inc., признанной экстремистской организацией, деятельность которой запрещена на территории Российской Федерации.
-        </p>
       </div>
     </MenuCtx.Provider>
   );
