@@ -69,7 +69,7 @@ export default function HomeEn() {
               <div className="px-6 md:pl-12 md:pr-10">
                 <h3 className="mt-5 text-[20px] font-bold uppercase leading-[1.2]">MARKETING IN THE LANGUAGE OF ART</h3>
                 <p className="mt-5 max-w-[560px] text-[16px] leading-[1.54] text-gray">
-                  Every campaign is a search for the deeper truth of your brand or project through aesthetics. Elevated symbolism, dramatic tension of spirit and expressiveness are in our DNA.
+                  Every campaign we create is a search for the deeper truth of your brand or project through aesthetics. Elevated symbolism, dramatic tension of spirit and expressiveness are in our DNA.
                 </p>
               </div>
             </Reveal>
