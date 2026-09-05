@@ -16,14 +16,14 @@ const ITEMS = {
   ru: [
     { label: "о проекте", href: "#about" },
     { label: "услуги", href: "#services" },
-    { label: "экспертно", href: "/expert" },
+    { label: "экспертно", href: "/media" },
     { label: "сообщество", href: "#community" },
     { label: "обсудить ваш проект", href: "#contact" },
   ],
   en: [
     { label: "about", href: "#about" },
     { label: "services", href: "#services" },
-    { label: "insights", href: "/en/expert" },
+    { label: "insights", href: "/en/media" },
     { label: "community", href: "#community" },
     { label: "discuss your project", href: "#contact" },
   ],
@@ -124,6 +124,7 @@ export default function MenuProvider({ children }) {
                   if (isTouch) window.scrollTo(0, 0);
                   else lenis?.scrollTo(0, { duration: 1.4 });
                 });
+                history.replaceState(null, "", isEn ? "/en" : "/"); // сбрасываем #раздел из адреса
               } else {
                 window.location.href = isEn ? "/en" : "/";
               }

@@ -45,7 +45,7 @@ export const SERVICES_EN = [
     ],
   },
   {
-    slug: "strategy",
+    slug: "smm-strategy",
     name: "SMM strategy",
     short:
       "Optimal for brands and projects that will handle execution themselves: at the rebranding or launch stage, after a deep study of your brief we create an exhaustive guide that brings clarity and focus to every stage of your SMM channels' growth.",
@@ -91,7 +91,7 @@ export const SERVICES_EN = [
     ],
   },
   {
-    slug: "smm",
+    slug: "smm-management",
     name: "SMM management",
     short:
       "Social media management: a solution for those focused on results who prefer to concentrate on their core business. We take over all day-to-day work of growing and maintaining your SMM channels, including full advertising support on request.",
@@ -144,7 +144,7 @@ export const SERVICES_EN = [
     ],
   },
   {
-    slug: "influence",
+    slug: "influencer-marketing",
     name: "influencer marketing",
     short:
       "We create meaningful collaborations with carefully selected influencers (audiences up to 500,000), connecting your brand to the right communities and current cultural codes on social media.",
@@ -226,7 +226,7 @@ export const SERVICES_EN = [
     ],
   },
   {
-    slug: "target",
+    slug: "performance",
     name: "paid social, Yandex Direct & CPA",
     short: "Every kind of advertising support: paid social, Yandex Direct and CPA.",
     lead: "Advertising support on social media and beyond: paid social, Yandex Direct, CPA",

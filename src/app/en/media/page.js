@@ -7,7 +7,7 @@ import { ARTICLES_EN } from "@/data/articles.en";
 
 export const metadata = {
   title: "Insights — sfumàto",
-  alternates: { canonical: "/en/expert", languages: { ru: "/expert", en: "/en/expert" } },
+  alternates: { canonical: "/en/media", languages: { ru: "/media", en: "/en/media" } },
   description:
     "sfumàto insights on aesthetic marketing: how brands turn products into symbols, current trends and effective practices.",
 };

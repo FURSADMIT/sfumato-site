@@ -57,6 +57,7 @@ export default function Header({ solid = false, allServices = false, backHref = 
               e.preventDefault();
               if (window.matchMedia("(pointer: coarse)").matches) window.scrollTo(0, 0);
               else lenis?.scrollTo(0, { duration: 1.4 });
+              history.replaceState(null, "", "/"); // сбрасываем #раздел из адреса
             }}
           >
             <img

@@ -57,7 +57,7 @@ export default function ExpertPage() {
                       {inner}
                     </a>
                   ) : (
-                    <Link href={`/expert/${a.slug}`} className="group block border-t border-line first:border-t-0">
+                    <Link href={`/media/${a.slug}`} className="group block border-t border-line first:border-t-0">
                       {inner}
                     </Link>
                   )}
