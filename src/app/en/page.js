@@ -69,16 +69,16 @@ export default function HomeEn() {
               <div className="px-6 md:pl-12 md:pr-10">
                 <h3 className="mt-5 text-[20px] font-bold uppercase leading-[1.2]">MARKETING IN THE LANGUAGE OF ART</h3>
                 <p className="mt-5 max-w-[560px] text-[16px] leading-[1.54] text-gray">
-                  Every campaign we create is a search for the deeper truth of your brand or project through aesthetics. Elevated symbolism, dramatic tension of spirit and expressiveness are in our DNA.
+                  We create marketing where every campaign is a search for the deeper truth of your brand or project through aesthetics. In our DNA, elevated symbolism, dramatic tension of spirit and expressiveness live alongside current cultural codes and symbols.
                 </p>
               </div>
             </Reveal>
             <Reveal delay={0.12}>
               <ShaderImage src="/images/about-2-green.jpg" alt="Green shoes on a pouf" className="aspect-[4/3] w-full" imgClassName="object-[50%_30%]" />
               <div className="px-6 md:pl-10 md:pr-12">
-                <h3 className="mt-5 text-[20px] font-bold uppercase leading-[1.2]">DEPTH, MEANING AND ELEGANCE</h3>
+                <h3 className="mt-5 text-[20px] font-bold uppercase leading-[1.2]">KINDRED PROJECTS</h3>
                 <p className="mt-5 max-w-[560px] text-[16px] leading-[1.54] text-gray">
-                  All of this lives alongside current cultural codes and symbols. We are inspired by projects with particular depth and a striving for infinitely simple (or not so simple) elegance.
+                  We are inspired to be part of projects with particular depth, meaning and a striving for infinitely simple (or not so simple) elegance.
                 </p>
               </div>
             </Reveal>
