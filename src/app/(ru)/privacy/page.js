@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 
 export const metadata = {
   title: "Политика конфиденциальности — sfumàto",
+  alternates: { canonical: "/privacy" },
   description: "Политика в отношении обработки персональных данных (152-ФЗ).",
 };
 

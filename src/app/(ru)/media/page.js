@@ -8,6 +8,7 @@ import { ARTICLES } from "@/data/articles";
 
 export const metadata = {
   title: "Экспертно — sfumàto",
+  alternates: { canonical: "/media", languages: { ru: "/media", en: "/en/media" } },
   description:
     "Экспертные материалы sfumàto об эстетичном маркетинге: как бренды превращают продукт в особые символы, актуальные тренды и эффективные практики.",
 };
