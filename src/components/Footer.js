@@ -9,8 +9,6 @@ const T = {
     contact: "СВЯЗАТЬСЯ С НАМИ:",
     copied: "адрес скопирован",
     credit: "дизайн и разработка — sfumàto © 2026",
-    metaNote:
-      "* Instagram принадлежит компании Meta Platforms Inc., признанной экстремистской организацией, деятельность которой запрещена на территории Российской Федерации.",
   },
   en: {
     privacy: "PRIVACY POLICY (IN RUSSIAN)",
@@ -18,8 +16,6 @@ const T = {
     contact: "CONTACT US:",
     copied: "address copied",
     credit: "design & development — sfumàto © 2026",
-    metaNote:
-      "* Instagram belongs to Meta Platforms Inc., recognized as an extremist organization and banned in the Russian Federation.",
   },
 };
 
@@ -47,22 +43,16 @@ export default function Footer({ lang = "ru" }) {
               </p>
             </div>
           </div>
-          <div className="flex flex-col gap-3">
-            <div className="flex items-center gap-3">
-              <a href="https://t.me/Sfuma_to" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-60">
-                <img src="/images/social-1.svg" alt="Telegram" className="size-10" />
-              </a>
-              <a href="https://vk.com/sfuma_to" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-60">
-                <img src="/images/social-2.svg" alt="ВКонтакте" className="size-10" />
-              </a>
-              <a href="https://dzen.ru/sfumato" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-60">
-                <img src="/images/social-3.svg" alt="Дзен" className="size-10" />
-              </a>
-              <a href="https://www.instagram.com/sfumato_curator" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-60">
-                <img src="/images/social-4.svg" alt="Instagram*" className="size-10" />
-              </a>
-            </div>
-            <p className="max-w-[300px] text-[9px] leading-[1.45] tracking-[0.01em] text-muted">{t.metaNote}</p>
+          <div className="flex items-center gap-3">
+            <a href="https://t.me/Sfuma_to" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-60">
+              <img src="/images/social-1.svg" alt="Telegram" className="size-10" />
+            </a>
+            <a href="https://vk.com/sfuma_to" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-60">
+              <img src="/images/social-2.svg" alt="ВКонтакте" className="size-10" />
+            </a>
+            <a href="https://dzen.ru/sfumato" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-60">
+              <img src="/images/social-3.svg" alt="Дзен" className="size-10" />
+            </a>
           </div>
         </div>
         <Reveal y={60} start="top bottom">
