@@ -76,7 +76,7 @@ export default function HomeEn() {
             <Reveal delay={0.12}>
               <ShaderImage src="/images/about-2-green.jpg" alt="Green shoes on a pouf" className="aspect-[4/3] w-full" imgClassName="object-[50%_30%]" />
               <div className="px-6 md:pl-10 md:pr-12">
-                <h3 className="mt-5 text-[20px] font-bold uppercase leading-[1.2]">THE SFUMÀTO CHOICE</h3>
+                <h3 className="mt-5 text-[20px] font-bold uppercase leading-[1.2]">THE <span className="text-[1.35em] font-semibold normal-case leading-none">sfumàto</span> CHOICE</h3>
                 <p className="mt-5 max-w-[560px] text-[16px] leading-[1.54] text-gray">
                   We are inspired to be part of projects with particular depth, meaning and a striving for infinitely simple (or not so simple) elegance.
                 </p>

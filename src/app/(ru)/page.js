@@ -69,7 +69,7 @@ export default function Home() {
             <Reveal delay={0.12}>
               <ShaderImage src="/images/about-2-green.jpg" alt="Эстетичный контент для бренда — зелёные туфли на пуфе" className="aspect-[4/3] w-full" imgClassName="object-[50%_30%]" />
               <div className="px-6 md:pl-10 md:pr-12">
-                <h3 className="mt-5 text-[20px] font-bold uppercase leading-[1.2]">ВЫБОР SFUMÀTO</h3>
+                <h3 className="mt-5 text-[20px] font-bold uppercase leading-[1.2]">ВЫБОР <span className="text-[1.35em] font-semibold normal-case leading-none">sfumàto</span></h3>
                 <p className="mt-5 max-w-[560px] text-[16px] leading-[1.54] text-gray">
                   Мы вдохновлены быть частью проектов с особой глубиной, смыслами и стремлением к бесконечно простому (или не очень) изяществу.
                 </p>
