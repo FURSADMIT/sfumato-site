@@ -9,7 +9,7 @@ const ntSomic = localFont({
 });
 
 const DESCRIPTION =
-  "Бутиковое маркетинговое агентство: SMM-стратегия и ведение социальных сетей, инфлюенс-маркетинг, motion-дизайн, таргет и Яндекс Директ. Маркетинг через эстетику и смысл.";
+  "Консультации, SMM-стратегия и ведение социальных сетей, инфлюенс-маркетинг, motion и AI-дизайн, таргетированная реклама в социальных сетях, Яндекс Директ и CPA.";
 
 // Для превью-карточки в мессенджерах и соцсетях — короткая брендовая строка
 const SOCIAL_TITLE = "sfumàto — бутиковое агентство эстетичного маркетинга";
@@ -18,7 +18,7 @@ const SOCIAL_DESCRIPTION =
 
 export const metadata = {
   metadataBase: new URL("https://sfuma-to.ru"),
-  title: "sfumàto — эстетичный маркетинг: SMM, стратегия, таргет",
+  title: "sfumàto — бутиковое агентство эстетичных маркетинговых кампаний",
   description: DESCRIPTION,
   alternates: { canonical: "/", languages: { ru: "/", en: "/en" } },
   openGraph: {
