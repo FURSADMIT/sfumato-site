@@ -153,7 +153,7 @@ export const SERVICES_EN = [
       {
         heading: "Approach",
         text: [
-          "For brands that value trust-based promotion: we carefully select mid-tier bloggers (audiences up to 500,000), connecting you to the right communities and current cultural codes on social media.",
+          "For those who value trust-based promotion: we carefully select mid-tier bloggers (audiences up to 500,000), connecting you to the right communities and current cultural codes on social media.",
         ],
       },
       {
@@ -161,11 +161,11 @@ export const SERVICES_EN = [
         steps: [
           {
             title: "Influencer selection",
-            text: "We analyse your brand's audience and select relevant mid-tier bloggers, combining data analytics with a deep understanding of influence marketing.",
+            text: "We analyse your audience and select relevant mid-tier bloggers, combining data analytics with a deep understanding of influence marketing.",
           },
           {
             title: "Formats & style",
-            text: "We shape the formats and style of each integration so the content feels native and true to your brand's DNA.",
+            text: "We shape the formats and style of each integration so the content feels native and true to your brand's or project's DNA.",
           },
           {
             title: "Launch & support",
@@ -180,7 +180,7 @@ export const SERVICES_EN = [
       {
         heading: "Result",
         text: [
-          "Meaningful collaborations and the trust of your target segments: content in tune with your brand's DNA, a lasting connection with the audience, measurable results and transparent reporting.",
+          "Meaningful collaborations and the trust of your target segments: content in tune with your brand's or project's DNA, a lasting connection with the audience, measurable results and transparent reporting.",
         ],
       },
     ],
@@ -195,7 +195,7 @@ export const SERVICES_EN = [
       {
         heading: "Who it's for",
         text: [
-          "For brands and projects that need striking visual formats: viral video creatives, AR effects and aesthetic AI visuals in statics — in line with current trends and your brand's style.",
+          "For brands and projects that need striking visual formats: viral video creatives, AR effects and aesthetic AI visuals in statics — in line with current trends and your style.",
           "We bring any concept to life:",
         ],
         tags: ["boutique", "corner", "space", "product"],
@@ -205,7 +205,7 @@ export const SERVICES_EN = [
         steps: [
           {
             title: "Immersion",
-            text: "We study your brand, style and references, and shape the creative concept.",
+            text: "We study your request, its specifics, style and references, and shape the creative concept.",
           },
           {
             title: "Production",
