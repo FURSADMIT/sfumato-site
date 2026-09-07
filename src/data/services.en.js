@@ -28,10 +28,10 @@ export const SERVICES_EN = [
             bullets: [
               "competitor analysis and effective practices in your niche;",
               "content strategy and content categories;",
-              "recommendations for your SMM channels: name, description, menu message;",
-              "discussion and selection of relevant advertising channels, placement templates and recommended volumes;",
+              "recommendations for your SMM channels: name, description;",
+              "discussion and selection of relevant promotion channels, ad templates and recommended volumes;",
               "moderation and community guidelines;",
-              "additional activities to grow the channel.",
+              "additional activities to grow your social media.",
             ],
           },
         ],
@@ -48,13 +48,13 @@ export const SERVICES_EN = [
     slug: "smm-strategy",
     name: "SMM strategy",
     short:
-      "Optimal for brands and projects that will handle execution themselves: at the rebranding or launch stage, after a deep study of your brief we create an exhaustive guide that brings clarity and focus to every stage of your SMM channels' growth.",
+      "Optimal for brands and projects that will handle execution themselves at the rebranding or launch stage. After a deep study of your brief, we create an exhaustive guide that brings clarity and focus to every stage of your SMM channels' growth.",
     lead: "An exhaustive guide that brings clarity and focus to every stage of your SMM channels' growth",
     blocks: [
       {
         heading: "Who it's for",
         text: [
-          "For brands and projects that will handle execution themselves: at the rebranding or launch stage, when you need a deep foundation and a complete picture of your SMM channels' development.",
+          "For brands and projects that will handle execution themselves: at the rebranding or launch stage, when you need a deep foundation and a complete picture of your social media development.",
         ],
       },
       {
@@ -189,7 +189,7 @@ export const SERVICES_EN = [
     slug: "motion-ai",
     name: "motion & AI design",
     short:
-      "We engage audiences with viral video creatives and craft unique, aesthetic AI visuals in statics — in line with current trends and your brand's or project's style.",
+      "We engage audiences with viral video creatives and craft unique, aesthetic AI visuals in statics — in line with current trends and your project's style.",
     lead: "Engaging audiences with viral creatives, AR effects and motion design",
     blocks: [
       {
@@ -228,7 +228,7 @@ export const SERVICES_EN = [
   {
     slug: "performance",
     name: "paid social, Yandex Direct & CPA",
-    short: "Every kind of advertising support: paid social, Yandex Direct and CPA.",
+    short: "Every kind of digital advertising support: paid social, Yandex Direct and CPA.",
     lead: "Advertising support on social media and beyond: paid social, Yandex Direct, CPA",
     blocks: [
       {
