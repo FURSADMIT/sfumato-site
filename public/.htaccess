@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# www.sfuma-to.ru -> sfuma-to.ru (главное зеркало)
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
+
+# /index.html -> / (убираем технический дубль главной)
+RewriteCond %{THE_REQUEST} \s/(.*/)?index\.html[\s?] [NC]
+RewriteRule ^(.*/)?index\.html$ /$1 [R=301,L]
