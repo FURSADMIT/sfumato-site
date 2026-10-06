@@ -20,6 +20,7 @@ const COMMUNITY_LINKS = [
   { name: "telegram", href: "https://t.me/Sfuma_to" },
   { name: "vk", href: "https://vk.com/sfuma_to" },
   { name: "dzen", href: "https://dzen.ru/sfumato" },
+  { name: "max", href: "https://max.ru/join/kJHnEqM_1JLPYEVsl48nGrMiTVNcTlYOLcZGWOFzGl0" },
   { name: "instagram*", href: "https://www.instagram.com/sfumato_curator" },
 ];
 

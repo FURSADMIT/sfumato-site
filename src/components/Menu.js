@@ -184,6 +184,9 @@ export default function MenuProvider({ children }) {
               <a href="https://dzen.ru/sfumato" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-60">
                 <img src="/images/social-3.svg" alt="Дзен" className="size-10" />
               </a>
+              <a href="https://max.ru/join/kJHnEqM_1JLPYEVsl48nGrMiTVNcTlYOLcZGWOFzGl0" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-60">
+                <img src="/images/social-4.svg" alt="MAX" className="size-10" />
+              </a>
             </div>
           </div>
         </div>
