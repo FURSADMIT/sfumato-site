@@ -66,7 +66,7 @@ export default function HomeEn() {
         <div className="mt-10 md:mt-[64px]">
           <div className="grid gap-y-10 md:grid-cols-2 md:gap-y-0">
             <Reveal>
-              <ShaderImage src="/images/about-1.jpg" alt="Magazine spread — a coat" className="aspect-[4/3] w-full" />
+              <ShaderImage src="/images/about-models.jpg" alt="Two models in pale blue knee socks in a retro interior" className="aspect-[4/3] w-full" />
               <div className="px-6 md:pl-12 md:pr-10">
                 <h3 className="mt-5 text-[20px] font-bold uppercase leading-[1.2]">MARKETING IN THE LANGUAGE OF ART</h3>
                 <p className="mt-5 max-w-[560px] text-[16px] leading-[1.54] text-gray">
@@ -75,7 +75,7 @@ export default function HomeEn() {
               </div>
             </Reveal>
             <Reveal delay={0.12}>
-              <ShaderImage src="/images/about-2-green.jpg" alt="Green shoes on a pouf" className="aspect-[4/3] w-full" imgClassName="object-[50%_30%]" />
+              <ShaderImage src="/images/about-table.jpg" alt="Blue socks and heels on a table with a strawberry tart" className="aspect-[4/3] w-full" imgClassName="object-[90%_50%]" />
               <div className="px-6 md:pl-10 md:pr-12">
                 <h3 className="mt-5 text-[20px] font-bold uppercase leading-[1.2]">THE <span className="text-[1.35em] font-semibold normal-case leading-none">sfumàto</span> CHOICE</h3>
                 <p className="mt-5 max-w-[560px] text-[16px] leading-[1.54] text-gray">
