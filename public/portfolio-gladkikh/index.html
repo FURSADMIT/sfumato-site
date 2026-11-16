@@ -1,0 +1,42 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="referrer" content="no-referrer"><title>Портфолио · Ирина Гладких</title><link rel="icon" href="data:,"><style>body{margin:0;color:#111;background:white;font:16px system-ui}iframe{position:fixed;inset:0;border:0;width:100%;height:100%;background:white}p{margin:2rem}</style></head><body><p role="status">Открывается портфолио…</p><script>
+const statusLine=document.querySelector('p'), token=location.hash.slice(1).split('/')[0];
+let pages,resources,key,version=0;
+const cache=new Map();
+async function readFile(name){
+ const response=await fetch('/portfolio-3d282a2e238c5824c73a/'+name);
+ if(!response.ok)throw Error('load');
+ const bytes=new Uint8Array(await response.arrayBuffer());
+ return crypto.subtle.decrypt({name:'AES-GCM',iv:bytes.subarray(0,12)},key,bytes.subarray(12));
+}
+function asset(k){
+ if(!cache.has(k)){
+   const {name,mime}=resources[k];
+   cache.set(k,readFile(name).then(data=>URL.createObjectURL(new Blob([data],{type:mime}))).catch(e=>{cache.delete(k);throw e}));
+ }
+ return cache.get(k);
+}
+function openCase(k){if(Object.hasOwn(pages,k))location.hash=token+(k==='index'?'':'/'+k)}
+async function route(){
+ const job=++version,k=location.hash.slice(1).split('/')[1]||'index';
+ if(!Object.hasOwn(pages,k))return openCase('index');
+ const source=pages[k],urls=new Map();
+ const names=[...new Set(Array.from(source.matchAll(/@@([^@]+)@@/g),m=>m[1]))];
+ await Promise.all(names.map(async n=>urls.set(n,await asset(n))));
+ if(job!==version)return;
+ let frame=document.querySelector('iframe');
+ if(!frame){frame=document.createElement('iframe');frame.title='Портфолио';frame.allow='fullscreen';document.body.append(frame)}
+ frame.srcdoc=source.replace(/@@([^@]+)@@/g,(_,n)=>urls.get(n));
+}
+function showError(){document.querySelector('iframe')?.remove();statusLine.textContent='Не удалось открыть портфолио. Проверьте подключение и откройте полную ссылку из сообщения.'}
+(async()=>{
+
+ const decode=s=>Uint8Array.from(atob(s),ch=>ch.charCodeAt(0));
+ const pass=await crypto.subtle.importKey('raw',new TextEncoder().encode(token),'PBKDF2',false,['deriveKey']);
+ const aliasKey=await crypto.subtle.deriveKey({name:'PBKDF2',salt:decode('BJMbBGmrFFele8ORquxOhw=='),iterations:250000,hash:'SHA-256'},pass,{name:'AES-GCM',length:256},false,['decrypt']);
+ const raw=await crypto.subtle.decrypt({name:'AES-GCM',iv:decode('WCiJchbyACVDzD9C')},aliasKey,decode('eqBgBTMYTmDRLCGzDhsejS2TcHNbXeL4YnodNYcw3J5agbL7IjIVwq+bfDG5y5MI'));
+ key=await crypto.subtle.importKey('raw',raw,'AES-GCM',false,['decrypt']);
+ ({pages,resources}=JSON.parse(new TextDecoder().decode(await readFile('pages.bin'))));
+ window.addEventListener('hashchange',()=>route().catch(showError));
+ await route();
+})().catch(showError);
+</script></body></html>
